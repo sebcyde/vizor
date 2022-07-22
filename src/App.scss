@@ -10,15 +10,44 @@
 	}
 }
 
-.App {
+body.LightMode {
+	height: 100vh;
+	width: 100vw;
+	background-color: $LightModeBackground;
 	text-align: center;
 	font-family: 'Edu VIC WA NT Beginner', cursive;
+	div#root {
+		height: 100%;
+		width: 100%;
 
-  h2 {
-    @include theme-colors($light-theme: true);
-    body.dark & {
-      @include theme-colors($light-theme: false);
-    }
+		div.App {
+			width: 100vw;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
 
+			div.nav-wrapper {
+				background-color: $AccentColor;
+			}
+
+			h2 {
+				color: $LightModeColor;
+			}
+
+			div.LoadingScreenContainer {
+				height: 100%;
+				width: 100%;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				span {
+					height: 50px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+		}
+	}
 }
-
