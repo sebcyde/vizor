@@ -57,7 +57,24 @@ function Homepage() {
 	return (
 		<div className="HomepageContainer">
 			<Nav />
-			<Col m={6} s={12}>
+			<div className="HomepageCardHolder">
+				<Card
+					header={
+						<CardTitle
+							image="https://materializecss.com/images/sample-1.jpg"
+							reveal
+							waves="light"
+						/>
+					}
+					reveal={
+						<div className="CardDetailsContainer">
+							<h3 className="CardDetailsOption"> - Add to favorites</h3>
+							<h3 className="CardDetailsOption"> - Add to collection</h3>
+						</div>
+					}
+					revealIcon={<Icon>more_vert</Icon>}
+					title="Test Text"
+				></Card>
 				<Card
 					closeIcon={<Icon>close</Icon>}
 					header={
@@ -76,7 +93,43 @@ function Homepage() {
 					revealIcon={<Icon>more_vert</Icon>}
 					title="Card Title"
 				></Card>
-			</Col>
+				<Card
+					closeIcon={<Icon>close</Icon>}
+					header={
+						<CardTitle
+							image="https://materializecss.com/images/sample-1.jpg"
+							reveal
+							waves="light"
+						/>
+					}
+					reveal={
+						<p>
+							Here is some more information about this product that is only
+							revealed once clicked on.
+						</p>
+					}
+					revealIcon={<Icon>more_vert</Icon>}
+					title="Card Title"
+				></Card>
+				<Card
+					closeIcon={<Icon>close</Icon>}
+					header={
+						<CardTitle
+							image="https://materializecss.com/images/sample-1.jpg"
+							reveal
+							waves="light"
+						/>
+					}
+					reveal={
+						<p>
+							Here is some more information about this product that is only
+							revealed once clicked on.
+						</p>
+					}
+					revealIcon={<Icon>more_vert</Icon>}
+					title="Card Title"
+				></Card>
+			</div>
 
 			<Button
 				className="MenuButton"

@@ -4,12 +4,12 @@ import { useState } from 'react';
 import BarLoader from 'react-spinners/HashLoader';
 
 function LoadingScreen() {
-	let [color, setColor] = useState('#4ba3c3');
+	let [color, setColor] = useState('#7d82b8');
 
 	return (
 		<div className="LoadingScreenContainer">
 			<BarLoader color={color} size={50} />
-			<h3>Just a second...</h3>
+			<h3 className="LoadingScreenText">Just a second...</h3>
 		</div>
 	);
 }

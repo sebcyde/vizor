@@ -14,6 +14,23 @@ body div#root div.App {
   display: flex;
   flex-direction: column;
 }
+body div#root div.App div.LoadingScreenContainer {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body div#root div.App div.LoadingScreenContainer span {
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body div#root div.App div.LoadingScreenContainer h3 {
+  font-size: 30px;
+}
 body div#root div.App div.nav-wrapper {
   background-color: #7d82b8;
 }
@@ -28,6 +45,44 @@ body div#root div.App ul#mobile-nav li {
 body div#root div.App ul#mobile-nav li .MenuBarItem {
   font-size: 25px;
 }
+body div#root div.App div.HomepageContainer div.HomepageCardHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  overflow: wrap;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+  margin: 5px;
+  margin-top: 10px;
+  box-shadow: 1px 1px rgb(165, 165, 165);
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card img {
+  border-top-left-radius: 15px;
+  height: 370px;
+  width: auto;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal {
+  border: 4px solid #7d82b8;
+  border-radius: 10px;
+  border-top-right-radius: 0px;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal div.CardDetailsContainer {
+  height: 100%;
+  width: 100%;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal div.CardDetailsContainer h3.CardDetailsOption {
+  font-size: 35px;
+}
 
 body.LightMode {
   background-color: #ffffff;
@@ -37,20 +92,6 @@ body.LightMode h2 {
 }
 body.LightMode ul#mobile-nav li .MenuBarItem {
   color: #1d1d1d;
-}
-body.LightMode div.LoadingScreenContainer {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body.LightMode div.LoadingScreenContainer span {
-  height: 50px;
-  margin-left: auto;
-  margin-right: auto;
 }
 body.LightMode div.HomepageContainer a.MenuButton {
   background-color: #7d82b8;

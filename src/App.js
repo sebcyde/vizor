@@ -14,9 +14,9 @@ import LoadingScreen from './Components/LoadingScreen/LoadingScreen';
 function App() {
 	const [Loading, setLoading] = useState(true);
 
-	setTimeout(() => {
-		setLoading(false);
-	}, 3000);
+	// setTimeout(() => {
+	// 	setLoading(false);
+	// }, 3000);
 
 	return (
 		<Router>
