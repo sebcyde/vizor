@@ -15,7 +15,7 @@ body div#root div.App {
   flex-direction: column;
 }
 body div#root div.App div.nav-wrapper {
-  background-color: #4ba3c3;
+  background-color: #7d82b8;
 }
 body div#root div.App div.nav-wrapper input {
   font-family: "Edu VIC WA NT Beginner", cursive;
@@ -23,6 +23,7 @@ body div#root div.App div.nav-wrapper input {
 }
 body div#root div.App ul#mobile-nav li {
   padding: 20px;
+  border-bottom: 1px solid #7d82b8;
 }
 body div#root div.App ul#mobile-nav li .MenuBarItem {
   font-size: 25px;
@@ -32,6 +33,9 @@ body.LightMode {
   background-color: #ffffff;
 }
 body.LightMode h2 {
+  color: #1d1d1d;
+}
+body.LightMode ul#mobile-nav li .MenuBarItem {
   color: #1d1d1d;
 }
 body.LightMode div.LoadingScreenContainer {
@@ -49,8 +53,8 @@ body.LightMode div.LoadingScreenContainer span {
   margin-right: auto;
 }
 body.LightMode div.HomepageContainer a.MenuButton {
-  background-color: #4ba3c3;
+  background-color: #7d82b8;
 }
 body.LightMode div.HomepageContainer button.SubMenuButton {
-  background-color: #4ba3c3;
+  background-color: #7d82b8;
 }/*# sourceMappingURL=App.css.map */

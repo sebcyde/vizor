@@ -21,11 +21,14 @@ function Menubar() {
 					preventScrolling: true,
 				}}
 			>
-				<NavLink to="/Library" className="MenuBarItem">
-					My Library
+				<NavLink to="/" className="MenuBarItem">
+					Home
 				</NavLink>
 				<NavLink to="/LikedImages" className="MenuBarItem">
-					My Favorites
+					Liked Images
+				</NavLink>
+				<NavLink to="/Library" className="MenuBarItem">
+					Collections
 				</NavLink>
 				<NavLink to="/Profile" className="MenuBarItem">
 					My Profile

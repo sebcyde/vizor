@@ -30,6 +30,7 @@ body {
 			ul#mobile-nav {
 				li {
 					padding: 20px;
+					border-bottom: 1px solid $AccentColor;
 
 					.MenuBarItem {
 						font-size: 25px;
@@ -45,6 +46,14 @@ body.LightMode {
 
 	h2 {
 		color: $LightModeColor;
+	}
+
+	ul#mobile-nav {
+		li {
+			.MenuBarItem {
+				color: $LightModeColor;
+			}
+		}
 	}
 
 	div.LoadingScreenContainer {

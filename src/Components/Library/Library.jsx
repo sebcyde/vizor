@@ -5,7 +5,7 @@ function Library() {
 	return (
 		<div className="LibraryContainer">
 			<Menubar />
-			<h2>Library</h2>
+			<h2>Collections</h2>
 		</div>
 	);
 }
