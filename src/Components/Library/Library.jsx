@@ -1,8 +1,10 @@
 import React from 'react';
+import Menubar from '../Menubar/Menubar';
 
 function Library() {
 	return (
-		<div>
+		<div className="LibraryContainer">
+			<Menubar />
 			<h2>Library</h2>
 		</div>
 	);

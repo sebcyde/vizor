@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import M from 'materialize-css';
 import Nav from './Components/Navbar/Nav';
+import Menubar from './Components/Menubar/Menubar';
 import Profile from './Components/Profile/Profile';
 import Homepage from './Components/Homepage/Homepage';
 import Library from './Components/Library/Library';
@@ -23,17 +24,15 @@ function App() {
 					<LoadingScreen />
 				) : (
 					<>
-						<Nav />
-						<Homepage />
+						<Routes>
+							<Route path="/" element={<Homepage />} />
+							<Route path="/Library" element={<Library />} />
+							<Route path="/LikedImages" element={<LikedImages />} />
+							<Route path="/Profile" element={<Profile />} />
+						</Routes>
 					</>
 				)}
 			</div>
-			<Routes>
-				<Route path="/Homepage" element={<Homepage />} />
-				<Route path="/Library" element={<Library />} />
-				<Route path="/LikedImages" element={<LikedImages />} />
-				<Route path="/Profile" element={<Profile />} />
-			</Routes>
 		</Router>
 	);
 }
