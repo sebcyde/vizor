@@ -1,7 +1,9 @@
 import './App.css';
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import M from 'materialize-css';
 import Nav from './Components/Navbar/Nav';
+import Profile from './Components/Profile/Profile';
 import Homepage from './Components/Homepage/Homepage';
 import Library from './Components/Library/Library';
 import LikedImages from './Components/LikedImages/LikedImages';
@@ -15,16 +17,24 @@ function App() {
 	}, 3000);
 
 	return (
-		<div className="App">
-			{Loading ? (
-				<LoadingScreen />
-			) : (
-				<>
-					<Nav />
-					<Homepage />
-				</>
-			)}
-		</div>
+		<Router>
+			<div className="App">
+				{Loading ? (
+					<LoadingScreen />
+				) : (
+					<>
+						<Nav />
+						<Homepage />
+					</>
+				)}
+			</div>
+			<Routes>
+				<Route path="/Homepage" element={<Homepage />} />
+				<Route path="/Library" element={<Library />} />
+				<Route path="/LikedImages" element={<LikedImages />} />
+				<Route path="/Profile" element={<Profile />} />
+			</Routes>
+		</Router>
 	);
 }
 
