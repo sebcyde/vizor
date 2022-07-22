@@ -1,0 +1,24 @@
+@import './Styles/Variables.scss';
+
+@mixin theme-colors($LightMode: true) {
+	@if $LightMode {
+		background-color: $LightModeBackground;
+		color: $LightModeColor;
+	} @else {
+		background-color: $DarkModeBackground;
+		color: $DarkModeColor;
+	}
+}
+
+.App {
+	text-align: center;
+	font-family: 'Edu VIC WA NT Beginner', cursive;
+
+  h2 {
+    @include theme-colors($light-theme: true);
+    body.dark & {
+      @include theme-colors($light-theme: false);
+    }
+
+}
+
