@@ -15,7 +15,6 @@ function Fab() {
 		<Button
 			className="MenuButton"
 			fab={{
-				direction: 'left',
 				hoverEnabled: false,
 			}}
 			floating
@@ -44,7 +43,15 @@ function Fab() {
 					floating
 					icon={<Icon>bookmarks</Icon>}
 					node="button"
-				/>{' '}
+				/>
+			</Link>
+			<Link to="/">
+				<Button
+					className="SubMenuButton"
+					floating
+					icon={<Icon>home</Icon>}
+					node="button"
+				/>
 			</Link>
 			<Link to="/Profile">
 				<Button

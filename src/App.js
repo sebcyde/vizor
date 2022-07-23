@@ -13,6 +13,7 @@ import LoadingScreen from './Components/LoadingScreen/LoadingScreen';
 
 function App() {
 	const [Loading, setLoading] = useState(true);
+	const [Theme, setTheme] = useState('Light App');
 
 	setTimeout(() => {
 		setLoading(false);
@@ -20,7 +21,7 @@ function App() {
 
 	return (
 		<Router>
-			<div className="App">
+			<div className={Theme}>
 				{Loading ? (
 					<LoadingScreen />
 				) : (

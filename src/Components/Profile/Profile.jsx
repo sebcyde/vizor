@@ -1,11 +1,13 @@
 import React from 'react';
-import Menubar from '../Menubar/Menubar';
+import Fab from '../Fab/Fab';
+import Nav from '../Navbar/Nav';
 
 function Profile() {
 	return (
 		<div className="ProfileContainer">
-			<Menubar />
+			<Nav />
 			<h2>Profile</h2>
+			<Fab />
 		</div>
 	);
 }

@@ -103,6 +103,6 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.
   font-size: 35px;
 }
 
-body.DarkMode {
+div.Dark {
   background-color: #111111;
 }/*# sourceMappingURL=App.css.map */
