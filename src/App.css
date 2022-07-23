@@ -120,7 +120,7 @@ body div#root div.App div.ProfileContainer ul.tabs li.indicator {
 }
 body div#root div.App div.ProfileContainer h3 {
   text-align: left;
-  margin: 20px;
+  margin: 40px;
   margin-left: 10px;
 }
 body div#root div.App div.ProfileContainer div.row > div > div > div {
@@ -137,9 +137,7 @@ body div#root div.App div.ProfileContainer div.row > div > div > div ul li {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 62px;
   padding: 20px;
 }
 body div#root div.App div.ProfileContainer div.row > div > div > div ul li p {

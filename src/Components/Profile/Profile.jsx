@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Fab from '../Fab/Fab';
 import {
 	Tabs,
@@ -11,23 +11,18 @@ import {
 } from 'react-materialize';
 
 function Profile() {
-	let bool = true;
-	const [Theme, setTheme] = useState(bool);
-	const ChangeTheme = () => {
-		setTheme((bool = !bool));
-	};
-
 	return (
 		<div className="ProfileContainer">
 			<Tabs className="tab-demo z-depth-1" scope="tabs-22">
 				<Tab
+					active
 					options={{
 						duration: 300,
 						onShow: null,
 						responsiveThreshold: Infinity,
 						swipeable: false,
 					}}
-					title="Settings"
+					title="General"
 				>
 					<h3>General Settings</h3>
 					<Row>
@@ -35,17 +30,22 @@ function Profile() {
 							<Collection>
 								<CollectionItem>
 									<p>Dark Mode</p>
-									<Switch id="Switch-20" onChange={ChangeTheme} />
+									<Switch id="Switch-20" />
 								</CollectionItem>
-								<CollectionItem>Alvin</CollectionItem>
-								<CollectionItem>Alvin</CollectionItem>
-								<CollectionItem>Alvin</CollectionItem>
+								<CollectionItem>
+									<p>Placeholder</p>
+								</CollectionItem>
+								<CollectionItem>
+									<p>Placeholder</p>
+								</CollectionItem>
+								<CollectionItem>
+									<p>Placeholder</p>
+								</CollectionItem>
 							</Collection>
 						</Col>
 					</Row>
 				</Tab>
 				<Tab
-					active
 					options={{
 						duration: 300,
 						onShow: null,
@@ -55,6 +55,24 @@ function Profile() {
 					title="Privacy"
 				>
 					<h3>Privacy Settings</h3>
+					<Row>
+						<Col m={6} s={12}>
+							<Collection>
+								<CollectionItem>
+									<p>Dark Mode</p>
+								</CollectionItem>
+								<CollectionItem>
+									<p>Placeholder</p>
+								</CollectionItem>
+								<CollectionItem>
+									<p>Placeholder</p>
+								</CollectionItem>
+								<CollectionItem>
+									<p>Placeholder</p>
+								</CollectionItem>
+							</Collection>
+						</Col>
+					</Row>
 				</Tab>
 
 				<Tab
@@ -70,10 +88,18 @@ function Profile() {
 					<Row>
 						<Col m={6} s={12}>
 							<Collection>
-								<CollectionItem>Alvin</CollectionItem>
-								<CollectionItem>Alvin</CollectionItem>
-								<CollectionItem>Alvin</CollectionItem>
-								<CollectionItem>Alvin</CollectionItem>
+								<CollectionItem>
+									<p>Dark Mode</p>
+								</CollectionItem>
+								<CollectionItem>
+									<p>Placeholder</p>
+								</CollectionItem>
+								<CollectionItem>
+									<p>Placeholder</p>
+								</CollectionItem>
+								<CollectionItem>
+									<p>Placeholder</p>
+								</CollectionItem>
 							</Collection>
 						</Col>
 					</Row>
