@@ -1,15 +1,25 @@
 import React from 'react';
 import Nav from '../Navbar/Nav';
 import Fab from '../Fab/Fab';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Icon, Col, Card, CardTitle, Checkbox } from 'react-materialize';
+import { auth, registerWithEmailAndPassword } from '../Firebase/Firebase';
 import { useEffect, useState } from 'react';
 
 function Homepage() {
+	const navigate = useNavigate();
 	const Access_Key = 'nMQhKYfCGhe3tce5azxV0KDvpsKH9zMIH1Ocp3IXhXM';
 
 	const [img, setImg] = useState('Anime');
 	const [res, setRes] = useState([]);
+
+	useEffect(() => {
+		auth.onAuthStateChanged((user) => {
+			if (user === null) {
+				navigate('/');
+			}
+		});
+	}, []);
 
 	// Working - don't abuse
 	// finish card styling FIRST

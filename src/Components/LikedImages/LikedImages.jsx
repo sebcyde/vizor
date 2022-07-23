@@ -1,9 +1,21 @@
-import React from 'react';
-import Menubar from '../Menubar/Menubar';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Nav from '../Navbar/Nav';
 import Fab from '../Fab/Fab';
+import { auth } from '../Firebase/Firebase';
 
 function LikedImages() {
+	const user = auth;
+	const navigate = useNavigate;
+
+	useEffect(() => {
+		auth.onAuthStateChanged((user) => {
+			if (user === null) {
+				navigate('/');
+			}
+		});
+	}, []);
+
 	return (
 		<div className="LikedImagesContainer">
 			<Nav />

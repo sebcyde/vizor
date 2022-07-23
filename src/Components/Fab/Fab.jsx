@@ -1,8 +1,12 @@
-import React from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, Link, usNavigate, useNavigate } from 'react-router-dom';
 import { Button, Icon, Col, Card, CardTitle } from 'react-materialize';
+import { logout, auth } from '../Firebase/Firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 function Fab() {
+	const navigate = useNavigate();
+
 	const ScrollToTop = () => {
 		window.scrollTo({
 			top: 0,
@@ -10,6 +14,22 @@ function Fab() {
 			behavior: 'smooth',
 		});
 	};
+
+	useEffect(() => {
+		auth.onAuthStateChanged((user) => {
+			if (user === null) {
+				navigate('/');
+			}
+		});
+	}, []);
+
+	const Logout = () => {
+		logout();
+	};
+
+	// useEffect(() => {
+	// 	if (!auth.currentUser || auth.currentUser === null) navigate('/');
+	// }, [User]);
 
 	let location = useLocation();
 
@@ -62,7 +82,7 @@ function Fab() {
 				</Link>
 			)}
 
-			{location.pathname === '/' ? (
+			{location.pathname === '/Homepage' ? (
 				''
 			) : (
 				<Link to="/">
@@ -86,6 +106,17 @@ function Fab() {
 						node="button"
 					/>
 				</Link>
+			)}
+			{location.pathname === '/Profile' ? (
+				<Button
+					className="SubMenuButton"
+					floating
+					icon={<Icon>logout</Icon>}
+					node="button"
+					onClick={Logout}
+				/>
+			) : (
+				''
 			)}
 		</Button>
 	);
