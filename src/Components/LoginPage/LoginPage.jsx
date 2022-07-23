@@ -15,11 +15,6 @@ function LoginPage() {
 		setUser(auth.currentUser);
 	};
 
-	// useEffect(() => {
-	// 	if (auth.currentUser) console.log(auth.currentUser);
-	// 	if (auth.currentUser !== null) navigate('/Homepage');
-	// }, [user]);
-
 	useEffect(() => {
 		auth.onAuthStateChanged((user) => {
 			if (user === null) {

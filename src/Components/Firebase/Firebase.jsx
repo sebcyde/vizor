@@ -37,7 +37,6 @@ const registerWithEmailAndPassword = async (name, email, password) => {
 		console.log('Registered Successfully');
 	} catch (err) {
 		console.error(err);
-		alert(err.message);
 	}
 };
 
@@ -47,7 +46,6 @@ const logInWithEmailAndPassword = async (email, password) => {
 		console.log('Signed In Successfully');
 	} catch (err) {
 		console.error(err);
-		alert(err.message);
 	}
 };
 

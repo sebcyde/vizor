@@ -27,10 +27,6 @@ function Fab() {
 		logout();
 	};
 
-	// useEffect(() => {
-	// 	if (!auth.currentUser || auth.currentUser === null) navigate('/');
-	// }, [User]);
-
 	let location = useLocation();
 
 	return (
