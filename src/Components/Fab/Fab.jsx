@@ -3,6 +3,14 @@ import { Link } from 'react-router-dom';
 import { Button, Icon, Col, Card, CardTitle } from 'react-materialize';
 
 function Fab() {
+	const ScrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: 'smooth',
+		});
+	};
+
 	return (
 		<Button
 			className="MenuButton"
@@ -15,6 +23,13 @@ function Fab() {
 			icon={<Icon>menu</Icon>}
 			node="button"
 		>
+			<Button
+				className="SubMenuButton"
+				floating
+				icon={<Icon>arrow_upward</Icon>}
+				node="button"
+				onClick={ScrollToTop}
+			/>
 			<Link to="/LikedImages">
 				<Button
 					className="SubMenuButton"
