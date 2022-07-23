@@ -89,16 +89,20 @@ function Profile() {
 						<Col m={6} s={12}>
 							<Collection>
 								<CollectionItem>
+									<p>UserName:</p>
 									<p>Dark Mode</p>
 								</CollectionItem>
 								<CollectionItem>
-									<p>Placeholder</p>
+									<p>First Name:</p>
+									<p>Dark Mode</p>
 								</CollectionItem>
 								<CollectionItem>
-									<p>Placeholder</p>
+									<p>Last Name:</p>
+									<p>Dark Mode</p>
 								</CollectionItem>
 								<CollectionItem>
-									<p>Placeholder</p>
+									<p>Account Created:</p>
+									<p>Dark Mode</p>
 								</CollectionItem>
 							</Collection>
 						</Col>
