@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from '../Navbar/Nav';
 import Fab from '../Fab/Fab';
 import { Link } from 'react-router-dom';
-import { Icon, Col, Card, CardTitle } from 'react-materialize';
+import { Icon, Col, Card, CardTitle, Checkbox } from 'react-materialize';
 import { useEffect, useState } from 'react';
 
 function Homepage() {
@@ -45,10 +45,12 @@ function Homepage() {
 					reveal={
 						<div className="CardDetailsContainer">
 							<h3 className="CardDetailsOption"> - Add to favorites</h3>
+							<Checkbox id="Checkbox_1" label="Red" value="Red" />
 							<h3 className="CardDetailsOption"> - Add to collection</h3>
 						</div>
 					}
 				></Card>
+
 				<Card
 					closeIcon={<Icon>close</Icon>}
 					header={

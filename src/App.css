@@ -72,15 +72,14 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder {
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card {
   margin-left: auto;
   margin-right: auto;
-  width: 95%;
+  width: 80%;
   border-radius: 10px;
-  border-top-right-radius: 0px;
+  overflow: hidden;
   margin: 5px;
   margin-top: 10px;
-  box-shadow: 1px 1px rgb(165, 165, 165);
+  box-shadow: 3px 3px rgb(165, 165, 165);
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card img {
-  border-top-left-radius: 15px;
   height: 370px;
   width: auto;
 }
@@ -92,7 +91,6 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal {
   border: 4px solid #7d82b8;
   border-radius: 10px;
-  border-top-right-radius: 0px;
   overflow: hidden;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal div.CardDetailsContainer {
@@ -101,6 +99,65 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal div.CardDetailsContainer h3.CardDetailsOption {
   font-size: 35px;
+}
+body div#root div.App div.ProfileContainer ul.tabs {
+  height: 56px;
+  background-color: #7d82b8;
+}
+body div#root div.App div.ProfileContainer ul.tabs li {
+  color: #fff;
+  height: 56px;
+}
+body div#root div.App div.ProfileContainer ul.tabs li a {
+  color: #fff;
+}
+body div#root div.App div.ProfileContainer ul.tabs li a.active {
+  color: #fff;
+  border-bottom: 3px solid white;
+}
+body div#root div.App div.ProfileContainer ul.tabs li.indicator {
+  background-color: transparent;
+}
+body div#root div.App div.ProfileContainer h3 {
+  text-align: left;
+  margin: 20px;
+  margin-left: 10px;
+}
+body div#root div.App div.ProfileContainer div.row > div > div > div {
+  padding: 0px;
+  width: 100%;
+  margin: 0px;
+}
+body div#root div.App div.ProfileContainer div.row > div > div > div ul {
+  margin: 0px;
+  border: 0px;
+}
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+}
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li p {
+  font-size: 25px;
+  margin: 0px;
+}
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li .switch label input[type=checkbox]:checked + .lever {
+  background-color: #7d82b8;
+}
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) {
+  background-color: rgba(125, 130, 184, 0.568627451);
+  color: #fff;
+}
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever {
+  background-color: #fff;
+}
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever::after {
+  background-color: #4ba3c3;
 }
 
 div.Dark {

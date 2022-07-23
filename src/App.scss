@@ -82,15 +82,14 @@ body {
 					div.card {
 						margin-left: auto;
 						margin-right: auto;
-						width: 95%;
+						width: 80%;
 						border-radius: 10px;
-						border-top-right-radius: 0px;
+						overflow: hidden;
 						margin: 5px;
 						margin-top: 10px;
-						box-shadow: 1px 1px rgb(165, 165, 165);
+						box-shadow: 3px 3px rgb(165, 165, 165);
 
 						img {
-							border-top-left-radius: 15px;
 							height: 370px;
 							width: auto;
 						}
@@ -104,7 +103,6 @@ body {
 						div.card-reveal {
 							border: 4px solid $AccentColor;
 							border-radius: 10px;
-							border-top-right-radius: 0px;
 							overflow: hidden;
 
 							div.CardDetailsContainer {
@@ -114,6 +112,73 @@ body {
 								h3.CardDetailsOption {
 									font-size: 35px;
 								}
+							}
+						}
+					}
+				}
+			}
+
+			div.ProfileContainer {
+				ul.tabs {
+					height: 56px;
+					background-color: $AccentColor;
+					li {
+						color: $LightModeWhiteFont;
+						height: 56px;
+						a {
+							color: $LightModeWhiteFont;
+						}
+						a.active {
+							color: $LightModeWhiteFont;
+							border-bottom: 3px solid white;
+						}
+					}
+
+					li.indicator {
+						background-color: transparent;
+					}
+				}
+
+				h3 {
+					text-align: left;
+					margin: 20px;
+					margin-left: 10px;
+				}
+
+				div.row > div > div > div {
+					padding: 0px;
+					width: 100%;
+					margin: 0px;
+
+					ul {
+						margin: 0px;
+						border: 0px;
+
+						li {
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							justify-content: space-between;
+							height: fit-content;
+							padding: 20px;
+							p {
+								font-size: 25px;
+								margin: 0px;
+							}
+
+							.switch label input[type='checkbox']:checked + .lever {
+								background-color: $AccentColor;
+							}
+						}
+
+						li:nth-of-type(odd) {
+							background-color: $AccentColorLight;
+							color: $LightModeWhiteFont;
+							.switch label input[type='checkbox']:checked + .lever {
+								background-color: $LightModeWhiteFont;
+							}
+							.switch label input[type='checkbox']:checked + .lever::after {
+								background-color: $AccentColorOne;
 							}
 						}
 					}
