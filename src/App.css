@@ -3,6 +3,7 @@ body {
   width: 100vw;
   text-align: center;
   font-family: "Edu VIC WA NT Beginner", cursive;
+  background-color: #ffffff;
 }
 body div#root {
   height: 100%;
@@ -13,6 +14,9 @@ body div#root div.App {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+body div#root div.App h2 {
+  color: #1d1d1d;
 }
 body div#root div.App div.LoadingScreenContainer {
   height: 100%;
@@ -31,10 +35,16 @@ body div#root div.App div.LoadingScreenContainer span {
 body div#root div.App div.LoadingScreenContainer h3 {
   font-size: 30px;
 }
-body div#root div.App div.nav-wrapper {
+body div#root div.App nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 1000000;
+}
+body div#root div.App nav div.nav-wrapper {
   background-color: #7d82b8;
 }
-body div#root div.App div.nav-wrapper input {
+body div#root div.App nav div.nav-wrapper input {
   font-family: "Edu VIC WA NT Beginner", cursive;
   color: #1d1d1d;
 }
@@ -44,6 +54,13 @@ body div#root div.App ul#mobile-nav li {
 }
 body div#root div.App ul#mobile-nav li .MenuBarItem {
   font-size: 25px;
+  color: #1d1d1d;
+}
+body div#root div.App a.MenuButton {
+  background-color: #7d82b8;
+}
+body div#root div.App button.SubMenuButton {
+  background-color: #7d82b8;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder {
   display: flex;
@@ -70,11 +87,13 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card img 
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-content {
   padding-top: 10px;
   padding-bottom: 10px;
+  display: none;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal {
   border: 4px solid #7d82b8;
   border-radius: 10px;
   border-top-right-radius: 0px;
+  overflow: hidden;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal div.CardDetailsContainer {
   height: 100%;
@@ -84,18 +103,6 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.
   font-size: 35px;
 }
 
-body.LightMode {
-  background-color: #ffffff;
-}
-body.LightMode h2 {
-  color: #1d1d1d;
-}
-body.LightMode ul#mobile-nav li .MenuBarItem {
-  color: #1d1d1d;
-}
-body.LightMode div.HomepageContainer a.MenuButton {
-  background-color: #7d82b8;
-}
-body.LightMode div.HomepageContainer button.SubMenuButton {
-  background-color: #7d82b8;
+body.DarkMode {
+  background-color: #111111;
 }/*# sourceMappingURL=App.css.map */

@@ -1,11 +1,13 @@
 import React from 'react';
-import Menubar from '../Menubar/Menubar';
+import Nav from '../Navbar/Nav';
+import Fab from '../Fab/Fab';
 
 function Library() {
 	return (
 		<div className="LibraryContainer">
-			<Menubar />
+			<Nav />
 			<h2>Collections</h2>
+			<Fab />
 		</div>
 	);
 }

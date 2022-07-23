@@ -1,6 +1,5 @@
 @import './Styles/Variables.scss';
 
-// Lightmode Starts at line 6
 // Darkmode Starts at line --
 
 body {
@@ -8,6 +7,7 @@ body {
 	width: 100vw;
 	text-align: center;
 	font-family: 'Edu VIC WA NT Beginner', cursive;
+	background-color: $LightModeBackground;
 
 	div#root {
 		height: 100%;
@@ -18,6 +18,10 @@ body {
 			height: 100%;
 			display: flex;
 			flex-direction: column;
+
+			h2 {
+				color: $LightModeColor;
+			}
 
 			div.LoadingScreenContainer {
 				height: 100%;
@@ -36,15 +40,19 @@ body {
 					font-size: 30px;
 				}
 			}
+			nav {
+				position: sticky;
+				top: 0px;
+				z-index: 1000000;
 
-			div.nav-wrapper {
-				background-color: $AccentColor;
-				input {
-					font-family: 'Edu VIC WA NT Beginner', cursive;
-					color: $LightModeColor;
+				div.nav-wrapper {
+					background-color: $AccentColor;
+					input {
+						font-family: 'Edu VIC WA NT Beginner', cursive;
+						color: $LightModeColor;
+					}
 				}
 			}
-
 			ul#mobile-nav {
 				li {
 					padding: 20px;
@@ -52,8 +60,16 @@ body {
 
 					.MenuBarItem {
 						font-size: 25px;
+						color: $LightModeColor;
 					}
 				}
+			}
+
+			a.MenuButton {
+				background-color: $AccentColor;
+			}
+			button.SubMenuButton {
+				background-color: $AccentColor;
 			}
 
 			div.HomepageContainer {
@@ -82,12 +98,14 @@ body {
 						div.card-content {
 							padding-top: 10px;
 							padding-bottom: 10px;
+							display: none;
 						}
 
 						div.card-reveal {
 							border: 4px solid $AccentColor;
 							border-radius: 10px;
 							border-top-right-radius: 0px;
+							overflow: hidden;
 
 							div.CardDetailsContainer {
 								height: 100%;
@@ -105,27 +123,6 @@ body {
 	}
 }
 
-body.LightMode {
-	background-color: $LightModeBackground;
-
-	h2 {
-		color: $LightModeColor;
-	}
-
-	ul#mobile-nav {
-		li {
-			.MenuBarItem {
-				color: $LightModeColor;
-			}
-		}
-	}
-
-	div.HomepageContainer {
-		a.MenuButton {
-			background-color: $AccentColor;
-		}
-		button.SubMenuButton {
-			background-color: $AccentColor;
-		}
-	}
+body.DarkMode {
+	background-color: $DarkModeBackground;
 }
