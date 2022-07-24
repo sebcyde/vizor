@@ -1,4 +1,5 @@
 import Fab from '../Fab/Fab';
+import UploadFab from './UploadFab/UploadFab';
 import Nav from '../Navbar/Nav';
 import React, { useState, useEffect } from 'react';
 import {
@@ -11,6 +12,7 @@ import {
 import { storage } from '../Firebase/FireStorage';
 import { v4 } from 'uuid';
 import { auth } from '../Firebase/Firebase';
+import { MediaBox } from 'react-materialize';
 
 function MyPage() {
 	const [imageUpload, setImageUpload] = useState(null);
@@ -31,13 +33,19 @@ function MyPage() {
 	};
 
 	useEffect(() => {
-		listAll(imagesListRef).then((response) => {
-			response.items.forEach((item) => {
-				getDownloadURL(item).then((url) => {
-					setImageUrls((prev) => [...prev, url]);
+		listAll(imagesListRef)
+			.then((response) => {
+				response.items.forEach((item) => {
+					getDownloadURL(item).then((url) => {
+						if (imageUrls.includes(url) === false) {
+							setImageUrls((prev) => [...prev, url]);
+						}
+					});
 				});
+			})
+			.then(() => {
+				console.log(imageUrls);
 			});
-		});
 	}, []);
 
 	return (
@@ -51,9 +59,27 @@ function MyPage() {
 				}}
 			/>
 			<button onClick={uploadFile}> Upload Image</button>
-			{imageUrls.map((url) => {
-				return <img src={url} className="MyPageImage" />;
+			{imageUrls.map((url, index) => {
+				return (
+					<MediaBox
+						id="MediaBox_9"
+						caption={url}
+						key={`Image${index}`}
+						options={{
+							inDuration: 275,
+							onCloseEnd: null,
+							onCloseStart: null,
+							onOpenEnd: null,
+							onOpenStart: null,
+							outDuration: 200,
+						}}
+					>
+						<img alt="" src={url} width="650" />
+					</MediaBox>
+				);
+				// return <img src={url} className="MyPageImage" />;
 			})}
+			{/* <UploadFab /> */}
 			<Fab />
 		</div>
 	);
