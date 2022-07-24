@@ -18,6 +18,7 @@ function MyPage() {
 	const [imageUpload, setImageUpload] = useState(null);
 	const [imageUrls, setImageUrls] = useState([]);
 	const imagesListRef = ref(storage, `${auth.currentUser.uid}`);
+	const FinalImageList = [];
 
 	const uploadFile = () => {
 		if (imageUpload == null) return;
@@ -35,16 +36,28 @@ function MyPage() {
 	useEffect(() => {
 		listAll(imagesListRef)
 			.then((response) => {
+				console.log(response.items);
 				response.items.forEach((item) => {
+					console.log(item);
 					getDownloadURL(item).then((url) => {
-						if (imageUrls.includes(url) === false) {
+						if (FinalImageList.length >= response.items.length) {
+						} else {
+							FinalImageList.push(url);
 							setImageUrls((prev) => [...prev, url]);
 						}
 					});
 				});
 			})
 			.then(() => {
-				console.log(imageUrls);
+				console.log(FinalImageList);
+
+				// FinalImageList.map((item) => {
+				// 	// imageUrls.push(item);
+				// 	setImageUrls((prev) => [...prev, item]);
+				// });
+			})
+			.then(() => {
+				console.log(FinalImageList);
 			});
 	}, []);
 
@@ -59,12 +72,11 @@ function MyPage() {
 				}}
 			/>
 			<button onClick={uploadFile}> Upload Image</button>
-			{imageUrls.map((url, index) => {
+			{imageUrls.map((url) => {
 				return (
 					<MediaBox
 						id="MediaBox_9"
 						caption={url}
-						key={`Image${index}`}
 						options={{
 							inDuration: 275,
 							onCloseEnd: null,
