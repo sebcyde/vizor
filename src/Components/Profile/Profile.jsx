@@ -8,11 +8,27 @@ import {
 	Collection,
 	CollectionItem,
 	Switch,
+	Button,
 } from 'react-materialize';
-import { auth } from '../Firebase/Firebase';
+import { auth, firebaseConfig } from '../Firebase/Firebase';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 
 function Profile() {
 	const User = auth.currentUser;
+	const app = initializeApp(firebaseConfig);
+	const db = getFirestore(app);
+
+	const UpdateUserData = () => {};
+
+	const querySnapshot = async () => {
+		await getDocs(collection(db, 'users')).then((result) => {
+			console.log(result);
+		});
+		querySnapshot.forEach((doc) => {
+			console.log(`${doc.id} => ${doc.data()}`);
+		});
+	};
 
 	return (
 		<div className="ProfileContainer">
@@ -108,6 +124,7 @@ function Profile() {
 									<p>Account Created:</p>
 									<p>Dark Mode</p>
 								</CollectionItem>
+								<Button onClick={querySnapshot}>Data Snapshot</Button>
 							</Collection>
 						</Col>
 					</Row>

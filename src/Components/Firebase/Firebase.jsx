@@ -54,6 +54,7 @@ const logout = () => {
 };
 
 export {
+	firebaseConfig,
 	auth,
 	db,
 	logInWithEmailAndPassword,
