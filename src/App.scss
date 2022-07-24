@@ -9,16 +9,17 @@ body {
 	font-family: 'Edu VIC WA NT Beginner', cursive;
 	background-color: $LightModeBackground;
 
-	img {
-		margin-left: auto;
-		margin-right: auto;
-		width: 60%;
-		height: auto;
-		padding: 20px;
-		margin-top: 20px;
-		border: 1px solid red;
+	.material-placeholder {
+		img {
+			margin: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 60%;
+			height: auto;
+			padding: 20px;
+			border: 1px solid red;
+		}
 	}
-
 	div#root {
 		height: 100%;
 		width: 100%;
