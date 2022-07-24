@@ -78,6 +78,19 @@ function Fab() {
 				</Link>
 			)}
 
+			{location.pathname === '/MyPage' ? (
+				''
+			) : (
+				<Link to="/MyPage">
+					<Button
+						className="SubMenuButton"
+						floating
+						icon={<Icon>person</Icon>}
+						node="button"
+					/>
+				</Link>
+			)}
+
 			{location.pathname === '/Homepage' ? (
 				''
 			) : (
@@ -98,7 +111,7 @@ function Fab() {
 					<Button
 						className="SubMenuButton"
 						floating
-						icon={<Icon>person</Icon>}
+						icon={<Icon>settings</Icon>}
 						node="button"
 					/>
 				</Link>

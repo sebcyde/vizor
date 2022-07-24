@@ -9,8 +9,11 @@ import {
 	CollectionItem,
 	Switch,
 } from 'react-materialize';
+import { auth } from '../Firebase/Firebase';
 
 function Profile() {
+	const User = auth.currentUser;
+
 	return (
 		<div className="ProfileContainer">
 			<Tabs className="tab-demo z-depth-1" scope="tabs-22">
@@ -89,17 +92,18 @@ function Profile() {
 						<Col m={6} s={12}>
 							<Collection>
 								<CollectionItem>
+									<p>Name:</p>
+									<p>Placeholder</p>
+								</CollectionItem>
+								<CollectionItem>
 									<p>UserName:</p>
-									<p>Dark Mode</p>
+									<p>{User.displayName}</p>
 								</CollectionItem>
 								<CollectionItem>
-									<p>First Name:</p>
-									<p>Dark Mode</p>
+									<p>Email:</p>
+									<p>{User.email}</p>
 								</CollectionItem>
-								<CollectionItem>
-									<p>Last Name:</p>
-									<p>Dark Mode</p>
-								</CollectionItem>
+
 								<CollectionItem>
 									<p>Account Created:</p>
 									<p>Dark Mode</p>

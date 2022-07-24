@@ -10,6 +10,7 @@ import LikedImages from './Components/LikedImages/LikedImages';
 import LoadingScreen from './Components/LoadingScreen/LoadingScreen';
 import LoginPage from './Components/LoginPage/LoginPage';
 import RegisterPage from './Components/RegisterPage/RegisterPage';
+import MyPage from './Components/MyPage/MyPage';
 
 function App() {
 	const [Loading, setLoading] = useState(true);
@@ -30,6 +31,7 @@ function App() {
 							<Route path="/" element={<LoginPage />} />
 							<Route path="/register" element={<RegisterPage />} />
 							<Route path="/Homepage" element={<Homepage />} />
+							<Route path="/MyPage" element={<MyPage />} />
 							<Route path="/Library" element={<Library />} />
 							<Route path="/LikedImages" element={<LikedImages />} />
 							<Route path="/Profile" element={<Profile />} />
