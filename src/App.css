@@ -1,13 +1,21 @@
+html {
+  height: 100%;
+}
+
 body {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   text-align: center;
-  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-family: "Ubuntu", sans-serif;
   background-color: #ffffff;
+  background-attachment: fixed;
 }
 body .DataSnapshotButton {
   margin-top: 50px;
   background-color: #3fa7d6;
+  position: fixed;
+  bottom: 30px;
+  left: 150px;
 }
 body .material-placeholder img {
   margin: 20px;
@@ -21,12 +29,14 @@ body .material-placeholder img {
 body div#root {
   height: 100%;
   width: 100%;
+  background-attachment: fixed;
 }
 body div#root div.App {
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  background-attachment: fixed;
 }
 body div#root div.App h2 {
   color: #1d1d1d;
@@ -77,14 +87,20 @@ body div#root div.App button.SubMenuButton {
 }
 body div#root div.App div.HomepageContainer {
   height: 100%;
+  overflow: scroll;
+  background-attachment: fixed;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   overflow: wrap;
+  background-attachment: scroll;
+  padding-bottom: 50px;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer {
   height: 62%;
@@ -106,7 +122,7 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
   margin-left: auto;
   margin-right: auto;
   border-radius: 10px;
-  border: 1px solid red;
+  border: 1px solid #7d82b8;
   box-shadow: 3px 3px 5px black;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo {
@@ -133,7 +149,7 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
   padding-top: 0px;
   padding-bottom: 0px;
   padding-left: 10px;
-  font-size: 25px;
+  font-size: 20px;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div {
   display: flex;
@@ -165,7 +181,7 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span p {
   padding-left: 5px;
   margin: 0px;
-  font-size: 20px;
+  font-size: 17px;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span a {
   color: black;
@@ -181,12 +197,15 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer .Description {
   padding-left: 15px;
   margin: 0px;
-  font-size: 20px;
+  font-size: 17px;
   text-align: left;
   margin-bottom: 10px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer:last-of-type {
+  margin-bottom: 50px;
 }
 body div#root div.App div.ProfileContainer {
   height: 100%;

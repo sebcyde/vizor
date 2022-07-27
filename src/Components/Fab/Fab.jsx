@@ -40,7 +40,7 @@ function Fab() {
 			icon={<Icon>menu</Icon>}
 			node="button"
 		>
-			{location.pathname === '/Profile' ? (
+			{location.pathname === '/Profile' || '/Homepage' ? (
 				''
 			) : (
 				<Button

@@ -1,17 +1,24 @@
 @import './Styles/Variables.scss';
 
 // Darkmode Starts at line --
+html {
+	height: 100%;
+}
 
 body {
-	height: 100vh;
+	height: 100%;
 	width: 100vw;
 	text-align: center;
-	font-family: 'Edu VIC WA NT Beginner', cursive;
+	font-family: 'Ubuntu', sans-serif;
 	background-color: $LightModeBackground;
+	background-attachment: fixed;
 
 	.DataSnapshotButton {
 		margin-top: 50px;
 		background-color: $AccentColorTwo;
+		position: fixed;
+		bottom: 30px;
+		left: 150px;
 	}
 
 	.material-placeholder {
@@ -28,12 +35,14 @@ body {
 	div#root {
 		height: 100%;
 		width: 100%;
+		background-attachment: fixed;
 
 		div.App {
 			width: 100vw;
-			height: 100%;
+			height: 100vh;
 			display: flex;
 			flex-direction: column;
+			background-attachment: fixed;
 
 			h2 {
 				color: $LightModeColor;
@@ -90,14 +99,18 @@ body {
 
 			div.HomepageContainer {
 				height: 100%;
+				overflow: scroll;
+				background-attachment: fixed;
 
 				div.HomepageCardHolder {
 					display: flex;
 					flex-direction: column;
 					align-items: center;
 					width: 100vw;
-					height: 100%;
+					height: fit-content;
 					overflow: wrap;
+					background-attachment: scroll;
+					padding-bottom: 50px;
 
 					.LoadingScreenContainer {
 						height: 62%;
@@ -118,7 +131,7 @@ body {
 						margin-left: auto;
 						margin-right: auto;
 						border-radius: 10px;
-						border: 1px solid red;
+						border: 1px solid $AccentColor;
 						box-shadow: 3px 3px 5px black;
 
 						.CreatorInfo {
@@ -142,7 +155,7 @@ body {
 								padding-top: 0px;
 								padding-bottom: 0px;
 								padding-left: 10px;
-								font-size: 25px;
+								font-size: 20px;
 							}
 						}
 
@@ -174,7 +187,7 @@ body {
 									p {
 										padding-left: 5px;
 										margin: 0px;
-										font-size: 20px;
+										font-size: 17px;
 									}
 
 									a {
@@ -193,7 +206,7 @@ body {
 									.Description {
 										padding-left: 15px;
 										margin: 0px;
-										font-size: 20px;
+										font-size: 17px;
 										text-align: left;
 										margin-bottom: 10px;
 										white-space: nowrap;
@@ -203,6 +216,10 @@ body {
 								}
 							}
 						}
+					}
+
+					div.ImageContainer:last-of-type {
+						margin-bottom: 50px;
 					}
 				}
 			}
