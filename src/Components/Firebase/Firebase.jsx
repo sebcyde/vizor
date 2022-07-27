@@ -42,7 +42,8 @@ const registerWithEmailAndPassword = async (
 			name,
 			authProvider: 'local',
 			email,
-			UserName,
+			DisplayName: UserName,
+			CreateDate: user.metadata.creationTime.slice(0, 16),
 		});
 		user.displayName = UserName;
 		console.log('Registered Successfully');

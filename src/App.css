@@ -5,6 +5,10 @@ body {
   font-family: "Edu VIC WA NT Beginner", cursive;
   background-color: #ffffff;
 }
+body .DataSnapshotButton {
+  margin-top: 50px;
+  background-color: #3fa7d6;
+}
 body .material-placeholder img {
   margin: 20px;
   margin-left: auto;
@@ -108,6 +112,10 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal div.CardDetailsContainer h3.CardDetailsOption {
   font-size: 35px;
+}
+body div#root div.App div.ProfileContainer {
+  width: 100%;
+  height: 100%;
 }
 body div#root div.App div.ProfileContainer ul.tabs {
   height: 56px;
