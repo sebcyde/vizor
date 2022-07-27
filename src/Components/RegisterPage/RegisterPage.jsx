@@ -9,10 +9,11 @@ function RegisterPage() {
 	const [password, setPassword] = useState('');
 	const [name, setName] = useState('');
 	const [user, setUser] = useState();
+	const [UserName, setUserName] = useState('');
 	const navigate = useNavigate();
 
 	const register = () => {
-		registerWithEmailAndPassword(name, email, password);
+		registerWithEmailAndPassword(name, email, password, UserName);
 		setUser(auth.currentUser);
 	};
 
@@ -37,6 +38,13 @@ function RegisterPage() {
 					value={name}
 					onChange={(e) => setName(e.target.value)}
 					placeholder="Full Name"
+				/>
+				<input
+					type="text"
+					className="register__textBox"
+					value={UserName}
+					onChange={(e) => setUserName(e.target.value)}
+					placeholder="UserName"
 				/>
 				<input
 					type="text"

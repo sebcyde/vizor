@@ -23,16 +23,28 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const registerWithEmailAndPassword = async (name, email, password) => {
+const registerWithEmailAndPassword = async (
+	name,
+	email,
+	password,
+	UserName
+) => {
 	try {
-		const res = await createUserWithEmailAndPassword(auth, email, password);
+		const res = await createUserWithEmailAndPassword(
+			auth,
+			email,
+			password,
+			UserName
+		);
 		const user = res.user;
 		await addDoc(collection(db, 'users'), {
 			uid: user.uid,
 			name,
 			authProvider: 'local',
 			email,
+			UserName,
 		});
+		user.displayName = UserName;
 		console.log('Registered Successfully');
 	} catch (err) {
 		console.error(err);

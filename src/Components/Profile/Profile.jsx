@@ -23,7 +23,6 @@ function Profile() {
 
 	const querySnapshot = async () => {
 		await getDocs(collection(db, 'users')).then((result) => {
-			console.log(collection);
 			console.log(auth);
 		});
 		querySnapshot.forEach((doc) => {
