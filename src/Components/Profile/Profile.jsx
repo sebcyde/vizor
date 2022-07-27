@@ -23,8 +23,6 @@ function Profile() {
 	const db = getFirestore(app);
 	const AccountCreationDate = User.metadata.creationTime.slice(0, 16);
 
-	const UpdateUserData = () => {};
-
 	const querySnapshot = async () => {
 		setLoading(true);
 		await getDocs(collection(db, 'users')).then((result) => {
