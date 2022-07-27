@@ -125,14 +125,24 @@ body {
 							width: 100%;
 							height: fit-content;
 							text-align: left;
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							padding: 10px;
+
+							.ProfilePhoto {
+								height: 40px;
+								border-radius: 50%;
+							}
 
 							p {
 								width: fit-content;
 								margin: 0px;
 								padding: 5px;
+								padding-top: 0px;
 								padding-bottom: 0px;
 								padding-left: 10px;
-								font-size: 30px;
+								font-size: 25px;
 							}
 						}
 
@@ -143,8 +153,9 @@ body {
 							img {
 								height: 300px;
 								width: 97%;
-								object-fit: contain;
-								border-radius: 10px;
+								object-fit: cover;
+								border-radius: 5px;
+								margin-bottom: 10px;
 								margin-left: auto;
 								margin-right: auto;
 							}
@@ -158,20 +169,37 @@ body {
 									flex-direction: row;
 									align-items: center;
 									height: fit-content;
-									padding-left: 10px;
+									padding-left: 15px;
 
 									p {
 										padding-left: 5px;
 										margin: 0px;
 										font-size: 20px;
 									}
+
+									a {
+										color: black;
+										margin-left: auto;
+										padding-right: 10px;
+									}
 								}
-								.Description {
-									padding-left: 10px;
-									margin: 0px;
-									font-size: 20px;
-									text-align: left;
-									margin-bottom: 10px;
+
+								.DescriptionContainer {
+									white-space: nowrap;
+									width: 90%;
+									overflow: hidden;
+									text-overflow: ellipsis;
+
+									.Description {
+										padding-left: 15px;
+										margin: 0px;
+										font-size: 20px;
+										text-align: left;
+										margin-bottom: 10px;
+										white-space: nowrap;
+										overflow: hidden;
+										text-overflow: ellipsis;
+									}
 								}
 							}
 						}

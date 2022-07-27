@@ -43,6 +43,10 @@ function Homepage() {
 		});
 	};
 
+	const Download = (Item) => {
+		window.open(Item.links.download);
+	};
+
 	const PullData = async () => {
 		axios
 			.get(
@@ -62,6 +66,10 @@ function Homepage() {
 						return (
 							<div className="ImageContainer">
 								<span className="CreatorInfo">
+									<img
+										src={Item.user.profile_image.medium}
+										className="ProfilePhoto"
+									/>
 									<p>{Item.user.name}</p>
 								</span>
 								<div>
@@ -70,8 +78,21 @@ function Homepage() {
 										<span>
 											<Icon>thumb_up_off_alt</Icon>
 											<p>{Item.user.total_likes} Likes</p>
+											<a
+												onClick={() => {
+													Download(Item);
+												}}
+											>
+												<Icon>download</Icon>
+											</a>
 										</span>
-										<p className="Description">{Item.description}</p>
+										<div className="DescriptionContainer">
+											<p className="Description">
+												{Item.description
+													? `${Item.user.name} : ${Item.description}`
+													: null}
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -110,9 +131,8 @@ function Homepage() {
 			</Button>
 			<div className="HomepageCardHolder">
 				{Loading ? <LoadingScreen /> : <>{RenderedElements}</>}
-
-				<Fab />
 			</div>
+			<Fab />
 		</div>
 	);
 }
