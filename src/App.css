@@ -139,6 +139,7 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo .ProfilePhoto {
   height: 40px;
   border-radius: 50%;
+  border: 2px solid #7d82b8;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo p {
   width: -webkit-fit-content;
