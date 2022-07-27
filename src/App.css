@@ -75,43 +75,94 @@ body div#root div.App a.MenuButton {
 body div#root div.App button.SubMenuButton {
   background-color: #7d82b8;
 }
+body div#root div.App div.HomepageContainer {
+  height: 100%;
+}
 body div#root div.App div.HomepageContainer div.HomepageCardHolder {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
+  height: 100%;
   overflow: wrap;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 5px;
-  margin-top: 10px;
-  box-shadow: 3px 3px rgb(165, 165, 165);
+body div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer {
+  height: 62%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card img {
-  height: 370px;
-  width: auto;
-}
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-content {
-  padding-top: 10px;
-  padding-bottom: 10px;
+body div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer h3 {
   display: none;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal {
-  border: 4px solid #7d82b8;
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer {
+  width: 95%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 10px;
-  overflow: hidden;
+  border: 1px solid red;
+  box-shadow: 3px 3px 5px black;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal div.CardDetailsContainer {
-  height: 100%;
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo {
   width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: left;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.card div.card-reveal div.CardDetailsContainer h3.CardDetailsOption {
-  font-size: 35px;
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0px;
+  padding: 5px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  font-size: 30px;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div {
+  display: flex;
+  flex-direction: column;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div img {
+  height: 300px;
+  width: 97%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer {
+  display: flex;
+  flex-direction: column;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-left: 10px;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span p {
+  padding-left: 5px;
+  margin: 0px;
+  font-size: 20px;
+}
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .Description {
+  padding-left: 10px;
+  margin: 0px;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 10px;
 }
 body div#root div.App div.ProfileContainer {
   height: 100%;

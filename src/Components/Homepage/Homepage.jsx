@@ -1,17 +1,29 @@
 import React from 'react';
 import Nav from '../Navbar/Nav';
 import Fab from '../Fab/Fab';
+import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { Icon, Col, Card, CardTitle, Checkbox } from 'react-materialize';
+import {
+	Icon,
+	Col,
+	Card,
+	CardTitle,
+	Checkbox,
+	Button,
+} from 'react-materialize';
 import { auth, registerWithEmailAndPassword } from '../Firebase/Firebase';
 import { useEffect, useState } from 'react';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
 function Homepage() {
 	const navigate = useNavigate();
 	const Access_Key = 'nMQhKYfCGhe3tce5azxV0KDvpsKH9zMIH1Ocp3IXhXM';
-
+	const [RenderedElements, setRenderedElements] = useState();
+	const [Loading, setLoading] = useState(true);
 	const [img, setImg] = useState('Anime');
-	const [res, setRes] = useState([]);
+	const [Res, setRes] = useState();
+
+	let ReturnedItems = [];
 
 	useEffect(() => {
 		auth.onAuthStateChanged((user) => {
@@ -20,6 +32,58 @@ function Homepage() {
 			}
 		});
 	}, []);
+
+	const fetchRequest = async () => {
+		await fetch(
+			`https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${Access_Key}`
+		).then((response) => {
+			const dataJ = response.json();
+			setRes(response.json().results);
+			setLoading(false);
+		});
+	};
+
+	const PullData = async () => {
+		axios
+			.get(
+				`https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${Access_Key}`
+			)
+			.then((response) => {
+				// console.log(response.data.results);
+				setRes(ReturnedItems);
+				response.data.results.forEach((Item) => {
+					ReturnedItems.push(Item);
+				});
+			})
+			.then(() => [
+				setRenderedElements(
+					ReturnedItems.map((Item) => {
+						console.log(Item);
+						return (
+							<div className="ImageContainer">
+								<span className="CreatorInfo">
+									<p>{Item.user.name}</p>
+								</span>
+								<div>
+									<img src={Item.urls.regular} />
+									<div className="ImageDetailContainer">
+										<span>
+											<Icon>thumb_up_off_alt</Icon>
+											<p>{Item.user.total_likes} Likes</p>
+										</span>
+										<p className="Description">{Item.description}</p>
+									</div>
+								</div>
+							</div>
+						);
+					})
+				),
+			])
+			.then(() => {
+				console.log(ReturnedItems);
+				setLoading(false);
+			});
+	};
 
 	// Working - don't abuse
 	// finish card styling FIRST
@@ -35,86 +99,18 @@ function Homepage() {
 	// };
 
 	// useEffect(() => {
-	// 	fetchRequest().then(() => {
-	// 		console.log(res);
-	// 	});
+	// PullData()
 	// }, []);
 
 	return (
 		<div className="HomepageContainer">
 			<Nav />
+			<Button className="DataSnapshotButton" onClick={PullData}>
+				Pull Data
+			</Button>
 			<div className="HomepageCardHolder">
-				<Card
-					header={
-						<CardTitle
-							image="https://materializecss.com/images/sample-1.jpg"
-							reveal
-							waves="light"
-						/>
-					}
-					reveal={
-						<div className="CardDetailsContainer">
-							<h3 className="CardDetailsOption"> - Add to favorites</h3>
-							<Checkbox id="Checkbox_1" label="Red" value="Red" />
-							<h3 className="CardDetailsOption"> - Add to collection</h3>
-						</div>
-					}
-				></Card>
+				{Loading ? <LoadingScreen /> : <>{RenderedElements}</>}
 
-				<Card
-					closeIcon={<Icon>close</Icon>}
-					header={
-						<CardTitle
-							image="https://materializecss.com/images/sample-1.jpg"
-							reveal
-							waves="light"
-						/>
-					}
-					reveal={
-						<p>
-							Here is some more information about this product that is only
-							revealed once clicked on.
-						</p>
-					}
-					revealIcon={<Icon>more_vert</Icon>}
-					title="Card Title"
-				></Card>
-				<Card
-					closeIcon={<Icon>close</Icon>}
-					header={
-						<CardTitle
-							image="https://materializecss.com/images/sample-1.jpg"
-							reveal
-							waves="light"
-						/>
-					}
-					reveal={
-						<p>
-							Here is some more information about this product that is only
-							revealed once clicked on.
-						</p>
-					}
-					revealIcon={<Icon>more_vert</Icon>}
-					title="Card Title"
-				></Card>
-				<Card
-					closeIcon={<Icon>close</Icon>}
-					header={
-						<CardTitle
-							image="https://materializecss.com/images/sample-1.jpg"
-							reveal
-							waves="light"
-						/>
-					}
-					reveal={
-						<p>
-							Here is some more information about this product that is only
-							revealed once clicked on.
-						</p>
-					}
-					revealIcon={<Icon>more_vert</Icon>}
-					title="Card Title"
-				></Card>
 				<Fab />
 			</div>
 		</div>
