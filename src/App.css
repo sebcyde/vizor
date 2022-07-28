@@ -2,7 +2,7 @@ html {
   height: 100%;
 }
 
-body {
+body.LightMode {
   height: 100%;
   width: 100vw;
   text-align: center;
@@ -10,14 +10,14 @@ body {
   background-color: #ffffff;
   background-attachment: fixed;
 }
-body .DataSnapshotButton {
+body.LightMode .DataSnapshotButton {
   margin-top: 50px;
   background-color: #3fa7d6;
   position: fixed;
   bottom: 30px;
   left: 150px;
 }
-body .material-placeholder img {
+body.LightMode .material-placeholder img {
   margin: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -26,22 +26,22 @@ body .material-placeholder img {
   padding: 20px;
   border: 1px solid red;
 }
-body div#root {
+body.LightMode div#root {
   height: 100%;
   width: 100%;
   background-attachment: fixed;
 }
-body div#root div.App {
+body.LightMode div#root div.App {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   background-attachment: fixed;
 }
-body div#root div.App h2 {
+body.LightMode div#root div.App h2 {
   color: #1d1d1d;
 }
-body div#root div.App div.LoadingScreenContainer {
+body.LightMode div#root div.App div.LoadingScreenContainer {
   height: 100%;
   width: 100%;
   text-align: center;
@@ -50,69 +50,66 @@ body div#root div.App div.LoadingScreenContainer {
   justify-content: center;
   align-items: center;
 }
-body div#root div.App div.LoadingScreenContainer span {
+body.LightMode div#root div.App div.LoadingScreenContainer span {
   height: 50px;
   margin-left: auto;
   margin-right: auto;
 }
-body div#root div.App div.LoadingScreenContainer h3 {
+body.LightMode div#root div.App div.LoadingScreenContainer h3 {
   font-size: 30px;
 }
-body div#root div.App nav {
+body.LightMode div#root div.App nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
   z-index: 1000000;
 }
-body div#root div.App nav div.nav-wrapper {
+body.LightMode div#root div.App nav div.nav-wrapper {
   background-color: #7d82b8;
 }
-body div#root div.App nav div.nav-wrapper input {
+body.LightMode div#root div.App nav div.nav-wrapper input {
   font-family: "Edu VIC WA NT Beginner", cursive;
   color: #1d1d1d;
 }
-body div#root div.App ul#mobile-nav li {
+body.LightMode div#root div.App ul#mobile-nav li {
   padding: 20px;
   border-bottom: 1px solid #7d82b8;
 }
-body div#root div.App ul#mobile-nav li .MenuBarItem {
+body.LightMode div#root div.App ul#mobile-nav li .MenuBarItem {
   font-size: 25px;
   color: #1d1d1d;
 }
-body div#root div.App a.MenuButton {
+body.LightMode div#root div.App a.MenuButton {
   background-color: #7d82b8;
 }
-body div#root div.App button.SubMenuButton {
+body.LightMode div#root div.App button.SubMenuButton {
   background-color: #7d82b8;
 }
-body div#root div.App div.HomepageContainer {
+body.LightMode div#root div.App div.HomepageContainer {
   height: 100%;
   overflow: scroll;
   background-attachment: fixed;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100%;
   overflow: wrap;
   background-attachment: scroll;
-  padding-bottom: 50px;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer {
   height: 62%;
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content: center;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer h3 {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer h3 {
   display: none;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer {
   width: 95%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -125,7 +122,7 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
   border: 1px solid #7d82b8;
   box-shadow: 3px 3px 5px black;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo {
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -136,12 +133,12 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
   align-items: center;
   padding: 10px;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo .ProfilePhoto {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo .ProfilePhoto {
   height: 40px;
   border-radius: 50%;
   border: 2px solid #7d82b8;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo p {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -152,11 +149,23 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
   padding-left: 10px;
   font-size: 20px;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo .FollowUserButton {
+  background-color: #7d82b8;
+  margin-left: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px 15px;
+  color: white;
+}
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div {
   display: flex;
   flex-direction: column;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div img {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div img {
   height: 300px;
   width: 97%;
   -o-object-fit: cover;
@@ -166,11 +175,11 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
   margin-left: auto;
   margin-right: auto;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer {
   display: flex;
   flex-direction: column;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -179,23 +188,23 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
   height: fit-content;
   padding-left: 15px;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span p {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span p {
   padding-left: 5px;
   margin: 0px;
   font-size: 17px;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span a {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span a {
   color: black;
   margin-left: auto;
   padding-right: 10px;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer {
   white-space: nowrap;
   width: 90%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer .Description {
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer .Description {
   padding-left: 15px;
   margin: 0px;
   font-size: 17px;
@@ -205,61 +214,61 @@ body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageCont
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer:last-of-type {
-  margin-bottom: 50px;
+body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer:last-of-type {
+  margin-bottom: 50px !important;
 }
-body div#root div.App div.ProfileContainer {
+body.LightMode div#root div.App div.ProfileContainer {
   height: 100%;
 }
-body div#root div.App div.ProfileContainer .row {
+body.LightMode div#root div.App div.ProfileContainer .row {
   height: 100%;
 }
-body div#root div.App div.ProfileContainer .row div {
+body.LightMode div#root div.App div.ProfileContainer .row div {
   height: 100%;
 }
-body div#root div.App div.ProfileContainer .row div .LoadingScreenContainer {
+body.LightMode div#root div.App div.ProfileContainer .row div .LoadingScreenContainer {
   height: inherit;
   display: flex;
   flex-direction: row;
   align-items: center;
   align-content: center;
 }
-body div#root div.App div.ProfileContainer .row div .LoadingScreenContainer h3 {
+body.LightMode div#root div.App div.ProfileContainer .row div .LoadingScreenContainer h3 {
   display: none;
 }
-body div#root div.App div.ProfileContainer ul.tabs {
+body.LightMode div#root div.App div.ProfileContainer ul.tabs {
   height: 56px;
   background-color: #7d82b8;
 }
-body div#root div.App div.ProfileContainer ul.tabs li {
+body.LightMode div#root div.App div.ProfileContainer ul.tabs li {
   color: #fff;
   height: 56px;
 }
-body div#root div.App div.ProfileContainer ul.tabs li a {
+body.LightMode div#root div.App div.ProfileContainer ul.tabs li a {
   color: #fff;
 }
-body div#root div.App div.ProfileContainer ul.tabs li a.active {
+body.LightMode div#root div.App div.ProfileContainer ul.tabs li a.active {
   color: #fff;
   border-bottom: 3px solid white;
 }
-body div#root div.App div.ProfileContainer ul.tabs li.indicator {
+body.LightMode div#root div.App div.ProfileContainer ul.tabs li.indicator {
   background-color: transparent;
 }
-body div#root div.App div.ProfileContainer h3 {
+body.LightMode div#root div.App div.ProfileContainer h3 {
   text-align: left;
   margin: 40px;
   margin-left: 10px;
 }
-body div#root div.App div.ProfileContainer div.row > div > div > div {
+body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div {
   padding: 0px;
   width: 100%;
   margin: 0px;
 }
-body div#root div.App div.ProfileContainer div.row > div > div > div ul {
+body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul {
   margin: 0px;
   border: 0px;
 }
-body div#root div.App div.ProfileContainer div.row > div > div > div ul li {
+body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -267,24 +276,315 @@ body div#root div.App div.ProfileContainer div.row > div > div > div ul li {
   height: 62px;
   padding: 20px;
 }
-body div#root div.App div.ProfileContainer div.row > div > div > div ul li p {
+body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li p {
   font-size: 25px;
   margin: 0px;
 }
-body div#root div.App div.ProfileContainer div.row > div > div > div ul li .switch label input[type=checkbox]:checked + .lever {
+body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li .switch label input[type=checkbox]:checked + .lever {
   background-color: #7d82b8;
 }
-body div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) {
+body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) {
   background-color: rgba(125, 130, 184, 0.568627451);
   color: #fff;
 }
-body div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever {
+body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever {
   background-color: #fff;
 }
-body div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever::after {
+body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever::after {
   background-color: #4ba3c3;
 }
 
-div.Dark {
+body.Dark {
+  height: 100%;
+  width: 100vw;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
   background-color: #111111;
+  background-attachment: fixed;
+  color: #f8f9fa;
+}
+body.Dark .DataSnapshotButton {
+  margin-top: 50px;
+  background-color: #3fa7d6;
+  position: fixed;
+  bottom: 30px;
+  left: 150px;
+}
+body.Dark .material-placeholder img {
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: auto;
+  padding: 20px;
+  border: 1px solid red;
+}
+body.Dark div#root {
+  height: 100%;
+  width: 100%;
+  background-attachment: fixed;
+}
+body.Dark div#root div.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-attachment: fixed;
+}
+body.Dark div#root div.App h2 {
+  color: #f8f9fa;
+}
+body.Dark div#root div.App div.LoadingScreenContainer {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body.Dark div#root div.App div.LoadingScreenContainer span {
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.Dark div#root div.App div.LoadingScreenContainer h3 {
+  font-size: 30px;
+}
+body.Dark div#root div.App nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 1000000;
+}
+body.Dark div#root div.App nav div.nav-wrapper {
+  background-color: #7d82b8;
+}
+body.Dark div#root div.App nav div.nav-wrapper input {
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  color: #1d1d1d;
+}
+body.Dark div#root div.App ul#mobile-nav li {
+  padding: 20px;
+  border-bottom: 1px solid #7d82b8;
+}
+body.Dark div#root div.App ul#mobile-nav li .MenuBarItem {
+  font-size: 25px;
+  color: #1d1d1d;
+}
+body.Dark div#root div.App a.MenuButton {
+  background-color: #7d82b8;
+}
+body.Dark div#root div.App button.SubMenuButton {
+  background-color: #7d82b8;
+}
+body.Dark div#root div.App div.HomepageContainer {
+  height: 100%;
+  overflow: scroll;
+  background-attachment: fixed;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  overflow: wrap;
+  background-attachment: scroll;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer {
+  height: 62%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer h3 {
+  display: none;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer {
+  width: 95%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  border: 1px solid #7d82b8;
+  box-shadow: 3px 3px 5px black;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo .ProfilePhoto {
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #7d82b8;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo p {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0px;
+  padding: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo .FollowUserButton {
+  background-color: #7d82b8;
+  margin-left: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px 15px;
+  color: white;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div {
+  display: flex;
+  flex-direction: column;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div img {
+  height: 300px;
+  width: 97%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer {
+  display: flex;
+  flex-direction: column;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-left: 15px;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span p {
+  padding-left: 5px;
+  margin: 0px;
+  font-size: 17px;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span a {
+  color: #f8f9fa;
+  margin-left: auto;
+  padding-right: 10px;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer {
+  white-space: nowrap;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer .Description {
+  padding-left: 15px;
+  margin: 0px;
+  font-size: 17px;
+  text-align: left;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body.Dark div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer:last-of-type {
+  margin-bottom: 50px !important;
+}
+body.Dark div#root div.App div.ProfileContainer {
+  height: 100%;
+}
+body.Dark div#root div.App div.ProfileContainer .row {
+  height: 100%;
+}
+body.Dark div#root div.App div.ProfileContainer .row div {
+  height: 100%;
+}
+body.Dark div#root div.App div.ProfileContainer .row div .LoadingScreenContainer {
+  height: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+}
+body.Dark div#root div.App div.ProfileContainer .row div .LoadingScreenContainer h3 {
+  display: none;
+}
+body.Dark div#root div.App div.ProfileContainer ul.tabs {
+  height: 56px;
+  background-color: #7d82b8;
+}
+body.Dark div#root div.App div.ProfileContainer ul.tabs li {
+  color: #fff;
+  height: 56px;
+}
+body.Dark div#root div.App div.ProfileContainer ul.tabs li a {
+  color: #fff;
+}
+body.Dark div#root div.App div.ProfileContainer ul.tabs li a.active {
+  color: #fff;
+  border-bottom: 3px solid white;
+}
+body.Dark div#root div.App div.ProfileContainer ul.tabs li.indicator {
+  background-color: transparent;
+}
+body.Dark div#root div.App div.ProfileContainer h3 {
+  text-align: left;
+  margin: 40px;
+  margin-left: 10px;
+}
+body.Dark div#root div.App div.ProfileContainer div.row > div > div > div {
+  padding: 0px;
+  width: 100%;
+  margin: 0px;
+}
+body.Dark div#root div.App div.ProfileContainer div.row > div > div > div ul {
+  margin: 0px;
+  border: 0px;
+}
+body.Dark div#root div.App div.ProfileContainer div.row > div > div > div ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 62px;
+  padding: 20px;
+  background-color: transparent;
+  border: none;
+}
+body.Dark div#root div.App div.ProfileContainer div.row > div > div > div ul li p {
+  font-size: 25px;
+  margin: 0px;
+}
+body.Dark div#root div.App div.ProfileContainer div.row > div > div > div ul li .switch label input[type=checkbox]:checked + .lever {
+  background-color: #7d82b8;
+}
+body.Dark div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) {
+  background-color: rgba(125, 130, 184, 0.568627451);
+  color: #f8f9fa;
+}
+body.Dark div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever {
+  background-color: #fff;
+}
+body.Dark div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever::after {
+  background-color: #4ba3c3;
 }/*# sourceMappingURL=App.css.map */

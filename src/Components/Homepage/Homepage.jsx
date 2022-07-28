@@ -36,16 +36,6 @@ function Homepage() {
 		});
 	}, []);
 
-	const fetchRequest = async () => {
-		await fetch(
-			`https://api.unsplash.com/search/photos?page=1&query=${img}&per_page=50&client_id=${Access_Key}`
-		).then((response) => {
-			const dataJ = response.json();
-			setRes(response.json().results);
-			setLoading(false);
-		});
-	};
-
 	const Download = (Item) => {
 		window.open(Item.links.download);
 	};
@@ -78,6 +68,20 @@ function Homepage() {
 									>
 										{Item.user.name}
 									</p>
+									<Button
+										className="FollowUserButton"
+										onClick={
+											UsersPage
+												? () => {
+														VisitUsersPage(UserVisited);
+												  }
+												: () => {
+														PullData();
+												  }
+										}
+									>
+										Follow
+									</Button>
 								</span>
 								<div>
 									<img src={Item.urls.regular} />
@@ -180,6 +184,7 @@ function Homepage() {
 			});
 	};
 
+	// Will autopull data on page load
 	// useEffect(() => {
 	// PullData()
 	// }, []);

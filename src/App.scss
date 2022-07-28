@@ -5,7 +5,7 @@ html {
 	height: 100%;
 }
 
-body {
+body.LightMode {
 	height: 100%;
 	width: 100vw;
 	text-align: center;
@@ -107,10 +107,9 @@ body {
 					flex-direction: column;
 					align-items: center;
 					width: 100vw;
-					height: fit-content;
+					height: 100%;
 					overflow: wrap;
 					background-attachment: scroll;
-					padding-bottom: 50px;
 
 					.LoadingScreenContainer {
 						height: 62%;
@@ -157,6 +156,15 @@ body {
 								padding-bottom: 0px;
 								padding-left: 10px;
 								font-size: 20px;
+							}
+
+							.FollowUserButton {
+								background-color: $AccentColor;
+								margin-left: auto;
+								height: fit-content;
+								width: fit-content;
+								padding: 0px 15px;
+								color: white;
 							}
 						}
 
@@ -220,7 +228,7 @@ body {
 					}
 
 					div.ImageContainer:last-of-type {
-						margin-bottom: 50px;
+						margin-bottom: 50px !important;
 					}
 				}
 			}
@@ -315,6 +323,325 @@ body {
 	}
 }
 
-div.Dark {
+// Dark Mode Starts Here
+
+body.Dark {
+	height: 100%;
+	width: 100vw;
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
 	background-color: $DarkModeBackground;
+	background-attachment: fixed;
+	color: $DarkModeColor;
+
+	.DataSnapshotButton {
+		margin-top: 50px;
+		background-color: $AccentColorTwo;
+		position: fixed;
+		bottom: 30px;
+		left: 150px;
+	}
+
+	.material-placeholder {
+		img {
+			margin: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			width: 60%;
+			height: auto;
+			padding: 20px;
+			border: 1px solid red;
+		}
+	}
+	div#root {
+		height: 100%;
+		width: 100%;
+		background-attachment: fixed;
+
+		div.App {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			background-attachment: fixed;
+
+			h2 {
+				color: $DarkModeColor;
+			}
+
+			div.LoadingScreenContainer {
+				height: 100%;
+				width: 100%;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				span {
+					height: 50px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				h3 {
+					font-size: 30px;
+				}
+			}
+			nav {
+				position: sticky;
+				top: 0px;
+				z-index: 1000000;
+
+				div.nav-wrapper {
+					background-color: $AccentColor;
+					input {
+						font-family: 'Edu VIC WA NT Beginner', cursive;
+						color: $LightModeColor;
+					}
+				}
+			}
+			ul#mobile-nav {
+				li {
+					padding: 20px;
+					border-bottom: 1px solid $AccentColor;
+
+					.MenuBarItem {
+						font-size: 25px;
+						color: $LightModeColor;
+					}
+				}
+			}
+
+			a.MenuButton {
+				background-color: $AccentColor;
+			}
+			button.SubMenuButton {
+				background-color: $AccentColor;
+			}
+
+			div.HomepageContainer {
+				height: 100%;
+				overflow: scroll;
+				background-attachment: fixed;
+
+				div.HomepageCardHolder {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					width: 100vw;
+					height: 100%;
+					overflow: wrap;
+					background-attachment: scroll;
+
+					.LoadingScreenContainer {
+						height: 62%;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						align-content: center;
+						h3 {
+							display: none;
+						}
+					}
+
+					div.ImageContainer {
+						width: 95%;
+						height: fit-content;
+						margin-top: 10px;
+						margin-bottom: 10px;
+						margin-left: auto;
+						margin-right: auto;
+						border-radius: 10px;
+						border: 1px solid $AccentColor;
+						box-shadow: 3px 3px 5px black;
+
+						.CreatorInfo {
+							width: 100%;
+							height: fit-content;
+							text-align: left;
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							padding: 10px;
+
+							.ProfilePhoto {
+								height: 40px;
+								border-radius: 50%;
+								border: 2px solid $AccentColor;
+							}
+
+							p {
+								width: fit-content;
+								margin: 0px;
+								padding: 5px;
+								padding-top: 0px;
+								padding-bottom: 0px;
+								padding-left: 10px;
+								font-size: 20px;
+							}
+
+							.FollowUserButton {
+								background-color: $AccentColor;
+								margin-left: auto;
+								height: fit-content;
+								width: fit-content;
+								padding: 0px 15px;
+								color: white;
+							}
+						}
+
+						div {
+							display: flex;
+							flex-direction: column;
+
+							img {
+								height: 300px;
+								width: 97%;
+								object-fit: cover;
+								border-radius: 5px;
+								margin-bottom: 10px;
+								margin-left: auto;
+								margin-right: auto;
+							}
+
+							.ImageDetailContainer {
+								display: flex;
+								flex-direction: column;
+
+								span {
+									display: flex;
+									flex-direction: row;
+									align-items: center;
+									height: fit-content;
+									padding-left: 15px;
+
+									p {
+										padding-left: 5px;
+										margin: 0px;
+										font-size: 17px;
+									}
+
+									a {
+										color: $DarkModeColor;
+										margin-left: auto;
+										padding-right: 10px;
+									}
+								}
+
+								.DescriptionContainer {
+									white-space: nowrap;
+									width: 90%;
+									overflow: hidden;
+									text-overflow: ellipsis;
+
+									.Description {
+										padding-left: 15px;
+										margin: 0px;
+										font-size: 17px;
+										text-align: left;
+										margin-bottom: 10px;
+										white-space: nowrap;
+										overflow: hidden;
+										text-overflow: ellipsis;
+									}
+								}
+							}
+						}
+					}
+
+					div.ImageContainer:last-of-type {
+						margin-bottom: 50px !important;
+					}
+				}
+			}
+
+			div.ProfileContainer {
+				height: 100%;
+				.row {
+					height: 100%;
+
+					div {
+						height: 100%;
+
+						.LoadingScreenContainer {
+							height: inherit;
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							align-content: center;
+							h3 {
+								display: none;
+							}
+						}
+					}
+				}
+
+				ul.tabs {
+					height: 56px;
+					background-color: $AccentColor;
+					li {
+						color: $LightModeWhiteFont;
+						height: 56px;
+						a {
+							color: $LightModeWhiteFont;
+						}
+						a.active {
+							color: $LightModeWhiteFont;
+							border-bottom: 3px solid white;
+						}
+					}
+
+					li.indicator {
+						background-color: transparent;
+					}
+				}
+
+				h3 {
+					text-align: left;
+					margin: 40px;
+					margin-left: 10px;
+				}
+
+				div.row > div > div > div {
+					padding: 0px;
+					width: 100%;
+					margin: 0px;
+
+					ul {
+						margin: 0px;
+						border: 0px;
+
+						li {
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							justify-content: space-between;
+							height: 62px;
+							padding: 20px;
+							background-color: transparent;
+							border: none;
+							p {
+								font-size: 25px;
+								margin: 0px;
+							}
+
+							.switch label input[type='checkbox']:checked + .lever {
+								background-color: $AccentColor;
+							}
+						}
+
+						li:nth-of-type(odd) {
+							background-color: $AccentColorLight;
+							color: $DarkModeColor;
+							.switch label input[type='checkbox']:checked + .lever {
+								background-color: $LightModeWhiteFont;
+							}
+							.switch label input[type='checkbox']:checked + .lever::after {
+								background-color: $AccentColorOne;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
