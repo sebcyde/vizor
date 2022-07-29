@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../Firebase/Firebase';
 import { Follow } from '../Actions/FollowUser/FollowUser';
+import { BlockUser } from '../Actions/BlockUser/BlockUser';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import {
 	Icon,

@@ -17,10 +17,9 @@ import {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const Follow = async (FollowedUser) => {
+const BlockUser = async (BlockedUser) => {
 	await getDocs(collection(db, 'users')).then((result) => {
 		let AllUsers = result.docs;
-		console.log(AllUsers);
 
 		AllUsers.forEach((DBuser) => {
 			if (
@@ -30,11 +29,11 @@ const Follow = async (FollowedUser) => {
 				console.log('Match Successful');
 				let UserInfo = DBuser._document.data.value.mapValue.fields;
 
-				const FollowRef = doc(db, 'users', UserInfo.uid.stringValue);
+				const BlockRef = doc(db, 'users', UserInfo.uid.stringValue);
 
 				setDoc(
-					FollowRef,
-					{ FollowedUsers: arrayUnion(FollowedUser) },
+					BlockRef,
+					{ BlockedUsers: arrayUnion(BlockedUser) },
 					{ merge: true }
 				);
 			} else {
@@ -42,8 +41,8 @@ const Follow = async (FollowedUser) => {
 			}
 		});
 
-		console.log('User Follow Successful');
+		console.log('User Block Successful');
 	});
 };
 
-export { Follow };
+export { BlockUser };
