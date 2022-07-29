@@ -11,6 +11,7 @@ import {
 	setDoc,
 	updateDoc,
 	FieldValue,
+	arrayUnion,
 } from 'firebase/firestore';
 
 const app = initializeApp(firebaseConfig);
@@ -42,7 +43,11 @@ const Follow = async (FollowedUser) => {
 				// below is searching for wrong value
 				const FollowRef = doc(db, 'users', UserInfo.uid.stringValue);
 				// below is correct
-				setDoc(FollowRef, { FollowedUsers: FollowedUser }, { merge: true });
+				setDoc(
+					FollowRef,
+					{ FollowedUsers: arrayUnion(FollowedUser) },
+					{ merge: true }
+				);
 			} else {
 				console.log('Not A Match');
 			}
