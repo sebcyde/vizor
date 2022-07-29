@@ -9,7 +9,6 @@ function LoadingScreen() {
 	return (
 		<div className="LoadingScreenContainer">
 			<BarLoader color={color} size={50} />
-			<h3 className="LoadingScreenText">Just a second...</h3>
 		</div>
 	);
 }

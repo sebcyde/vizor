@@ -1,12 +1,11 @@
-.login {
+body.LightMode .login {
   height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.login__container {
+body.LightMode .login__container {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -15,33 +14,28 @@
   border-radius: 15px;
   padding: 30px;
 }
-
-.login__textBox {
+body.LightMode .login__textBox {
   padding: 10px;
   font-size: 18px;
   margin-bottom: 10px;
   color: black;
 }
-
-.login__textBox::-moz-placeholder {
+body.LightMode .login__textBox::-moz-placeholder {
   color: black;
   font-family: "Edu VIC WA NT Beginner", cursive;
   font-size: 18px;
 }
-
-.login__textBox:-ms-input-placeholder {
+body.LightMode .login__textBox:-ms-input-placeholder {
   color: black;
   font-family: "Edu VIC WA NT Beginner", cursive;
   font-size: 18px;
 }
-
-.login__textBox::placeholder {
+body.LightMode .login__textBox::placeholder {
   color: black;
   font-family: "Edu VIC WA NT Beginner", cursive;
   font-size: 18px;
 }
-
-.login__btn {
+body.LightMode .login__btn {
   padding: 10px;
   font-size: 18px;
   margin-bottom: 10px;
@@ -50,7 +44,59 @@
   color: white;
   background-color: #7d82b8;
 }
+body.LightMode .login div {
+  margin-top: 7px;
+}
 
-.login div {
+body.Dark .login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.Dark .login > div > div {
+  color: #111111;
+}
+body.Dark .login__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(215, 215, 215);
+  box-shadow: 3px 3px 5px black;
+  border-radius: 15px;
+  padding: 30px;
+}
+body.Dark .login__textBox {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: black;
+}
+body.Dark .login__textBox::-moz-placeholder {
+  color: black;
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-size: 18px;
+}
+body.Dark .login__textBox:-ms-input-placeholder {
+  color: black;
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-size: 18px;
+}
+body.Dark .login__textBox::placeholder {
+  color: black;
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  font-size: 18px;
+}
+body.Dark .login__btn {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  border: none;
+  color: white;
+  background-color: #7d82b8;
+}
+body.Dark .login div {
   margin-top: 7px;
 }/*# sourceMappingURL=Login.css.map */

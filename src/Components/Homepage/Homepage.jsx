@@ -1,8 +1,11 @@
-import React from 'react';
+import { React, useEffect, useState } from 'react';
 import Nav from '../Navbar/Nav';
 import Fab from '../Fab/Fab';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../Firebase/Firebase';
+import { Follow } from '../Actions/FollowUser/FollowUser';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import {
 	Icon,
 	Col,
@@ -12,12 +15,10 @@ import {
 	Button,
 	Breadcrumb,
 } from 'react-materialize';
-import { auth, registerWithEmailAndPassword } from '../Firebase/Firebase';
-import { useEffect, useState } from 'react';
-import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
 function Homepage() {
 	const navigate = useNavigate();
+
 	const Access_Key = 'nMQhKYfCGhe3tce5azxV0KDvpsKH9zMIH1Ocp3IXhXM';
 	const [RenderedElements, setRenderedElements] = useState();
 	const [UserVisited, setUserVisited] = useState();
@@ -70,15 +71,9 @@ function Homepage() {
 									</p>
 									<Button
 										className="FollowUserButton"
-										onClick={
-											UsersPage
-												? () => {
-														VisitUsersPage(UserVisited);
-												  }
-												: () => {
-														PullData();
-												  }
-										}
+										onClick={() => {
+											Follow(Item.user.username);
+										}}
 									>
 										Follow
 									</Button>

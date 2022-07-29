@@ -44,6 +44,8 @@ const registerWithEmailAndPassword = async (
 			email,
 			DisplayName: UserName,
 			CreateDate: user.metadata.creationTime.slice(0, 16),
+			FollowedUsers: [],
+			BlockedUsers: [],
 		});
 		user.displayName = UserName;
 		console.log('Registered Successfully');
