@@ -1,10 +1,6 @@
-import React from 'react';
+import { React } from 'react';
 import { initializeApp } from 'firebase/app';
-import {
-	registerWithEmailAndPassword,
-	firebaseConfig,
-	auth,
-} from '../../Firebase/Firebase';
+import { firebaseConfig, auth } from '../../Firebase/Firebase';
 import { getAuth } from 'firebase/auth';
 import {
 	getFirestore,
@@ -19,64 +15,50 @@ import {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const User = auth.currentUser;
 
 const Follow = async (FollowedUser) => {
 	// await updateDoc(doc(db, `users/${auth.currentUser.uid}`), {
 	// 	FollowedUsers: { ...FollowedUser },
 	// });
 
-	// const FollowRef = db.collection('users').doc(auth.currentUser.id);
-	// console.log(FollowRef);
-
-	// await FollowRef.update({
-	// 	FollowedUsers: FieldValue.arrayUnion(FollowedUser),
-	// });
-
-	console.log(User);
+	console.log(auth.currentUser);
 
 	await getDocs(collection(db, 'users')).then((result) => {
 		let AllUsers = result.docs;
-		let CurrentUserInfo = result.docs[0]._document.data.value.mapValue.fields;
 		console.log(AllUsers);
-		console.log(CurrentUserInfo);
-		console.log(User);
-		// Gets the details of the current user by their UID
 
-		const FollowRef = doc(db, 'users', User.id);
-		setDoc(FollowRef, { FollowedUsers: FollowedUser }, { merge: true });
+		AllUsers.forEach((DBuser, i) => {
+			console.log(i);
+			console.log(auth.currentUser.uid);
+			console.log(DBuser._document.data.value.mapValue.fields.uid.stringValue);
+			if (
+				DBuser._document.data.value.mapValue.fields.uid.stringValue ===
+				auth.currentUser.uid
+			) {
+				console.log('Match Successful');
+				let UserInfo = DBuser._document.data.value.mapValue.fields;
+				console.log(UserInfo);
 
-		// AllUsers.forEach((User) => {
+				// below is searching for wrong value
+				const FollowRef = doc(db, 'users', UserInfo.uid.stringValue);
+				// below is correct
+				setDoc(FollowRef, { FollowedUsers: FollowedUser }, { merge: true });
+			} else {
+				console.log('Not A Match');
+			}
+		});
+
+		// AllUsers.forEach((DBuser) => {
 		// 	if (
-		// 		User._document.data.value.mapValue.fields.uid === CurrentUserInfo.uid
+		// 		DBuser._document.data.value.mapValue.fields.uid.stringValue ===
+		// 		auth.currentUser.uid
 		// 	) {
-		// 		let UserInfo = User._document.data.value.mapValue.fields;
-		// 		console.log('Followed User:');
-		// 		console.log(FollowedUser);
-		// 		console.log('Current User:');
-		// 		console.log(UserInfo);
-		// 		console.log('Current User Following:');
-		// 		console.log(UserInfo.FollowedUsers);
-		// 		console.log(UserInfo.FollowedUsers.arrayValue);
-		// 		console.log('Current User ID:');
-		// 		console.log(User.id);
-		// 		// updateDoc(`users/${User.id}/FollowedUsers`).arrayUnion(...FollowedUser);
-		// 		const FollowRef = db.collection('users').doc(User.id);
-		// 		console.log(FollowRef);
-		// 		FollowRef.update({
-		// 			FollowedUsers: FieldValue.arrayUnion(FollowedUser),
-		// 		});
+		// 		console.log(DBuser._document.data.value.mapValue.fields);
 		// 	}
 		// });
-		console.log('Break');
-	});
 
-	await getDocs(collection(db, 'users')).then((result) => {
-		let CurrentUserInfo = result.docs[0]._document.data.value.mapValue.fields;
-		console.log(CurrentUserInfo);
+		console.log('User Follow Successful');
 	});
-
-	// console.log('User Follow Successful');
 };
 
 export { Follow };

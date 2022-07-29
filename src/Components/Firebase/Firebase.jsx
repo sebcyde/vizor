@@ -6,6 +6,7 @@ import {
 	createUserWithEmailAndPassword,
 	signOut,
 } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 
 const firebaseConfig = {
@@ -37,7 +38,8 @@ const registerWithEmailAndPassword = async (
 			UserName
 		);
 		const user = res.user;
-		await addDoc(collection(db, 'users'), {
+		console.log(user);
+		await setDoc(doc(db, 'users', user.uid), {
 			uid: user.uid,
 			name,
 			authProvider: 'local',
