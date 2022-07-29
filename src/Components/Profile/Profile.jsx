@@ -12,7 +12,9 @@ import {
 } from 'react-materialize';
 import { auth, firebaseConfig } from '../Firebase/Firebase';
 import { initializeApp } from 'firebase/app';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+import { Link, useNavigate } from 'react-router-dom';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
 function Profile() {
@@ -21,22 +23,40 @@ function Profile() {
 	const User = auth.currentUser;
 	const app = initializeApp(firebaseConfig);
 	const db = getFirestore(app);
+	const navigate = useNavigate;
 	const AccountCreationDate = User.metadata.creationTime.slice(0, 16);
 
-	const querySnapshot = async () => {
-		setLoading(true);
-		await getDocs(collection(db, 'users')).then((result) => {
-			setUserDetails(result.docs[0]._document.data.value.mapValue.fields);
-			setLoading(false);
-		});
-		console.log(UserDetails);
-	};
-
 	useEffect(() => {
+		auth.onAuthStateChanged((user) => {
+			if (user === null) {
+				navigate('/');
+			}
+		});
 		querySnapshot().then(() => {
 			setLoading(false);
 		});
 	}, []);
+
+	const querySnapshot = async () => {
+		setLoading(true);
+
+		await getDocs(collection(db, 'users')).then((result) => {
+			let AllUsers = result.docs;
+
+			AllUsers.forEach((DBuser) => {
+				if (
+					DBuser._document.data.value.mapValue.fields.uid.stringValue ===
+					auth.currentUser.uid
+				) {
+					let UserInfo = DBuser._document.data.value.mapValue.fields;
+					console.log(UserInfo);
+					setUserDetails(UserInfo);
+				}
+			});
+
+			setLoading(false);
+		});
+	};
 
 	return (
 		<div className="ProfileContainer">
