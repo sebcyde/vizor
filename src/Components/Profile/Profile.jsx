@@ -16,6 +16,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import ThemeToggleSwitch from './ThemeToggleSwitch/ThemeToggleSwitch.jsx';
 
 function Profile() {
 	const [Loading, setLoading] = useState(true);
@@ -77,7 +78,7 @@ function Profile() {
 							<Collection>
 								<CollectionItem>
 									<p>Dark Mode</p>
-									<Switch id="Switch-20" />
+									<ThemeToggleSwitch />
 								</CollectionItem>
 								<CollectionItem>
 									<p>Placeholder</p>

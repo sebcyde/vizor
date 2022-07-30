@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import M from 'materialize-css';
 import Nav from './Components/Navbar/Nav';
@@ -19,6 +19,15 @@ function App() {
 	setTimeout(() => {
 		setLoading(false);
 	}, 2000);
+
+	useEffect(() => {
+		const Body = document.body;
+		const color = window.localStorage.getItem('AppColorScheme');
+
+		Body.classList.add(color);
+
+		console.log(Body.classList);
+	}, []);
 
 	return (
 		<Router>

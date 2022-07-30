@@ -2,7 +2,7 @@ html {
   height: 100%;
 }
 
-body.LightMode {
+body {
   height: 100%;
   width: 100vw;
   text-align: center;
@@ -10,14 +10,14 @@ body.LightMode {
   background-color: #ffffff;
   background-attachment: fixed;
 }
-body.LightMode .DataSnapshotButton {
+body .DataSnapshotButton {
   margin-top: 50px;
   background-color: #3fa7d6;
   position: fixed;
   bottom: 30px;
   left: 150px;
 }
-body.LightMode .material-placeholder img {
+body .material-placeholder img {
   margin: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -26,22 +26,22 @@ body.LightMode .material-placeholder img {
   padding: 20px;
   border: 1px solid red;
 }
-body.LightMode div#root {
+body div#root {
   height: 100%;
   width: 100%;
   background-attachment: fixed;
 }
-body.LightMode div#root div.App {
+body div#root div.App {
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   background-attachment: fixed;
 }
-body.LightMode div#root div.App h2 {
+body div#root div.App h2 {
   color: #1d1d1d;
 }
-body.LightMode div#root div.App div.LoadingScreenContainer {
+body div#root div.App div.LoadingScreenContainer {
   height: 100%;
   width: 100%;
   text-align: center;
@@ -51,47 +51,47 @@ body.LightMode div#root div.App div.LoadingScreenContainer {
   align-items: center;
   overflow: hidden;
 }
-body.LightMode div#root div.App div.LoadingScreenContainer span {
+body div#root div.App div.LoadingScreenContainer span {
   height: 50px;
   margin-left: auto;
   margin-right: auto;
 }
-body.LightMode div#root div.App div.LoadingScreenContainer h3 {
+body div#root div.App div.LoadingScreenContainer h3 {
   font-size: 30px;
 }
-body.LightMode div#root div.App nav {
+body div#root div.App nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
   z-index: 1000000;
 }
-body.LightMode div#root div.App nav div.nav-wrapper {
+body div#root div.App nav div.nav-wrapper {
   background-color: #7d82b8;
 }
-body.LightMode div#root div.App nav div.nav-wrapper input {
+body div#root div.App nav div.nav-wrapper input {
   font-family: "Edu VIC WA NT Beginner", cursive;
   color: #1d1d1d;
 }
-body.LightMode div#root div.App ul#mobile-nav li {
+body div#root div.App ul#mobile-nav li {
   padding: 20px;
   border-bottom: 1px solid #7d82b8;
 }
-body.LightMode div#root div.App ul#mobile-nav li .MenuBarItem {
+body div#root div.App ul#mobile-nav li .MenuBarItem {
   font-size: 25px;
   color: #1d1d1d;
 }
-body.LightMode div#root div.App a.MenuButton {
+body div#root div.App a.MenuButton {
   background-color: #7d82b8;
 }
-body.LightMode div#root div.App button.SubMenuButton {
+body div#root div.App button.SubMenuButton {
   background-color: #7d82b8;
 }
-body.LightMode div#root div.App div.HomepageContainer {
+body div#root div.App div.HomepageContainer {
   height: 100%;
   overflow: scroll;
   background-attachment: fixed;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,7 +100,7 @@ body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder {
   overflow: wrap;
   background-attachment: scroll;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer {
   height: 62%;
   display: flex;
   flex-direction: row;
@@ -108,10 +108,10 @@ body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder .Lo
   align-content: center;
   overflow: hidden;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer h3 {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder .LoadingScreenContainer h3 {
   display: none;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer {
   width: 95%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -124,7 +124,7 @@ body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div
   border: 1px solid #7d82b8;
   box-shadow: 3px 3px 5px black;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo {
   width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -135,12 +135,12 @@ body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div
   align-items: center;
   padding: 10px;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo .ProfilePhoto {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo .ProfilePhoto {
   height: 40px;
   border-radius: 50%;
   border: 2px solid #7d82b8;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo p {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo p {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -151,7 +151,7 @@ body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div
   padding-left: 10px;
   font-size: 20px;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo .FollowUserButton {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer .CreatorInfo .FollowUserButton {
   background-color: #7d82b8;
   margin-left: auto;
   height: -webkit-fit-content;
@@ -163,11 +163,11 @@ body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div
   padding: 0px 15px;
   color: white;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div {
   display: flex;
   flex-direction: column;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div img {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div img {
   height: 300px;
   width: 97%;
   -o-object-fit: cover;
@@ -177,11 +177,11 @@ body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div
   margin-left: auto;
   margin-right: auto;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer {
   display: flex;
   flex-direction: column;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -190,23 +190,23 @@ body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div
   height: fit-content;
   padding-left: 15px;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span p {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span p {
   padding-left: 5px;
   margin: 0px;
   font-size: 17px;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span a {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer span a {
   color: black;
   margin-left: auto;
   padding-right: 10px;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer {
   white-space: nowrap;
   width: 90%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer .Description {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer div .ImageDetailContainer .DescriptionContainer .Description {
   padding-left: 15px;
   margin: 0px;
   font-size: 17px;
@@ -216,19 +216,19 @@ body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body.LightMode div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer:last-of-type {
+body div#root div.App div.HomepageContainer div.HomepageCardHolder div.ImageContainer:last-of-type {
   margin-bottom: 50px !important;
 }
-body.LightMode div#root div.App div.ProfileContainer {
+body div#root div.App div.ProfileContainer {
   height: 100%;
 }
-body.LightMode div#root div.App div.ProfileContainer .row {
+body div#root div.App div.ProfileContainer .row {
   height: 100%;
 }
-body.LightMode div#root div.App div.ProfileContainer .row div {
+body div#root div.App div.ProfileContainer .row div {
   height: 100%;
 }
-body.LightMode div#root div.App div.ProfileContainer .row div .LoadingScreenContainer {
+body div#root div.App div.ProfileContainer .row div .LoadingScreenContainer {
   height: inherit;
   display: flex;
   flex-direction: row;
@@ -236,42 +236,42 @@ body.LightMode div#root div.App div.ProfileContainer .row div .LoadingScreenCont
   align-content: center;
   overflow: hidden;
 }
-body.LightMode div#root div.App div.ProfileContainer .row div .LoadingScreenContainer h3 {
+body div#root div.App div.ProfileContainer .row div .LoadingScreenContainer h3 {
   display: none;
 }
-body.LightMode div#root div.App div.ProfileContainer ul.tabs {
+body div#root div.App div.ProfileContainer ul.tabs {
   height: 56px;
   background-color: #7d82b8;
 }
-body.LightMode div#root div.App div.ProfileContainer ul.tabs li {
+body div#root div.App div.ProfileContainer ul.tabs li {
   color: #fff;
   height: 56px;
 }
-body.LightMode div#root div.App div.ProfileContainer ul.tabs li a {
+body div#root div.App div.ProfileContainer ul.tabs li a {
   color: #fff;
 }
-body.LightMode div#root div.App div.ProfileContainer ul.tabs li a.active {
+body div#root div.App div.ProfileContainer ul.tabs li a.active {
   color: #fff;
   border-bottom: 3px solid white;
 }
-body.LightMode div#root div.App div.ProfileContainer ul.tabs li.indicator {
+body div#root div.App div.ProfileContainer ul.tabs li.indicator {
   background-color: transparent;
 }
-body.LightMode div#root div.App div.ProfileContainer h3 {
+body div#root div.App div.ProfileContainer h3 {
   text-align: left;
   margin: 40px;
   margin-left: 10px;
 }
-body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div {
+body div#root div.App div.ProfileContainer div.row > div > div > div {
   padding: 0px;
   width: 100%;
   margin: 0px;
 }
-body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul {
+body div#root div.App div.ProfileContainer div.row > div > div > div ul {
   margin: 0px;
   border: 0px;
 }
-body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li {
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -279,21 +279,21 @@ body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div u
   height: 62px;
   padding: 20px;
 }
-body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li p {
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li p {
   font-size: 25px;
   margin: 0px;
 }
-body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li .switch label input[type=checkbox]:checked + .lever {
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li .switch label input[type=checkbox]:checked + .lever {
   background-color: #7d82b8;
 }
-body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) {
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) {
   background-color: rgba(125, 130, 184, 0.568627451);
   color: #fff;
 }
-body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever {
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever {
   background-color: #fff;
 }
-body.LightMode div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever::after {
+body div#root div.App div.ProfileContainer div.row > div > div > div ul li:nth-of-type(odd) .switch label input[type=checkbox]:checked + .lever::after {
   background-color: #4ba3c3;
 }
 

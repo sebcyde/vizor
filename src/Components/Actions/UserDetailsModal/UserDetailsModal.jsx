@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 
-const UserDetailsModal = () => {
+function UserDetailsModal() {
 	const [open, setOpen] = useState(false);
 
 	const onOpenModal = () => setOpen(true);
@@ -17,6 +17,6 @@ const UserDetailsModal = () => {
 			</Modal>
 		</div>
 	);
-};
+}
 
-ReactDOM.render(<UserDetailsModal />, document.getElementById('app'));
+export { UserDetailsModal };

@@ -4,7 +4,6 @@ import Fab from '../Fab/Fab';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../Firebase/Firebase';
-import UserDet
 import { Follow } from '../Actions/FollowUser/FollowUser';
 import { BlockUser } from '../Actions/BlockUser/BlockUser';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
@@ -71,14 +70,15 @@ function Homepage() {
 									>
 										{Item.user.name}
 									</p>
-									<Button
+									<Icon className="UserPostMoreIcon">more_horiz</Icon>
+									{/* <Button
 										className="FollowUserButton"
 										onClick={() => {
 											Follow(Item.user.username);
 										}}
 									>
 										Follow
-									</Button>
+									</Button> */}
 								</span>
 								<div>
 									<img src={Item.urls.regular} />
@@ -86,7 +86,7 @@ function Homepage() {
 										<span>
 											<Icon>thumb_up_off_alt</Icon>
 											<p>{Item.user.total_likes}</p>
-											{MoreDetailsModal}
+											{/* KOKO NI */}
 
 											<a
 												onClick={() => {
