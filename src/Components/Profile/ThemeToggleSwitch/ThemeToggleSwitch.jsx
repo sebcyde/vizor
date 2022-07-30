@@ -7,20 +7,17 @@ function ThemeToggleSwitch() {
 
 	// Switches Color Theme
 	const SwitchTheme = () => {
-		console.log('Switch Theme Activated');
 		if (AppTheme === 'LightMode') {
 			setAppTheme('Dark');
 		} else if (AppTheme === 'Dark') {
 			setAppTheme('LightMode');
 		}
-		console.log(`App Theme is now: ${AppTheme}`);
 	};
 
 	// Stores and Applies Color Theme To Body
 	useEffect(() => {
 		if (AppTheme !== undefined) {
 			window.localStorage.setItem('AppColorScheme', AppTheme);
-			console.log(`Stored Theme is now ${AppTheme}`);
 
 			let color = window.localStorage.getItem('AppColorScheme');
 
@@ -50,31 +47,27 @@ function ThemeToggleSwitch() {
 	}, [AppTheme]);
 
 	useEffect(() => {
-		// check when the component is loaded
-		const localStorageToggled = localStorage.getItem('toggled');
+		let color = window.localStorage.getItem('AppColorScheme');
 
 		// If is not null
-		if (localStorageToggled) {
-			setToggle(localStorageToggled === 'true' ? true : false);
-		} else {
+		if (color == 'LightMode') {
+			setToggle(false);
+		} else if (color == 'Dark') {
 			// If null set the localStorage key/value as a string.
-			localStorage.setItem('toggle', `${toggle}`);
+			setToggle(true);
+		} else {
+			setToggle(false);
 		}
-		console.log(localStorage);
-	}, []);
+	}, [SwitchTheme]);
 
-	const handleToggle = (toggle) => {
-		localStorage.setItem('toggle', `${toggle}`);
-		setToggle(toggle);
-	};
 	return (
 		<Switch
 			onChange={() => {
 				SwitchTheme();
-				handleToggle(!toggle);
 			}}
 			offLabel="Light"
 			onLabel="Dark"
+			checked={toggle}
 		/>
 	);
 }
