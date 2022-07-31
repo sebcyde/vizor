@@ -244,10 +244,12 @@ function Homepage() {
 					<a>{UserVisited}</a>
 				</Breadcrumb>
 			) : (
-				<Nav />
+				<>
+					<Nav />
+					<StoriesBanner />
+				</>
 			)}
 
-			<StoriesBanner />
 			<Button
 				className="DataSnapshotButton"
 				onClick={

@@ -3,6 +3,8 @@ import { auth, firebaseConfig } from '../../Firebase/Firebase';
 import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+import DefaultMale from '../../../Assets/DefaultMale.jpg';
+import DefaultFemale from '../../../Assets/DefaultFemale.jpg';
 
 function StoriesBanner() {
 	const [Stories, setStories] = useState();
@@ -22,6 +24,7 @@ function StoriesBanner() {
 				let AllUsers = result.docs;
 
 				AllUsers.forEach((DBuser) => {
+					console.log(DBuser._document.data.value.mapValue.fields);
 					if (
 						DBuser._document.data.value.mapValue.fields.uid.stringValue ===
 						User.uid
@@ -40,12 +43,21 @@ function StoriesBanner() {
 			.then(() => {
 				setStories(
 					ReturnedUserInformation.map((user) => {
-						console.log(user);
 						let Info = user.mapValue.fields;
+						let PFP =
+							Info.ProfilePictureURL.mapValue.fields.stringValue.stringValue;
+						console.log(DefaultMale);
 						console.log(Info);
 						return (
 							<div className="StoryContainer">
-								<img className="StoryPosterProfileImage" />
+								<img
+									className="StoryPosterProfileImage"
+									src={
+										PFP.length === 0
+											? require('../../../Assets/DefaultMale.jpg')
+											: PFP
+									}
+								/>
 								<p className="StoryPosterUsername">
 									{Info.DisplayName.mapValue.fields.stringValue.stringValue}
 								</p>

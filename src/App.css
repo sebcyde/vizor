@@ -98,8 +98,6 @@ body div#root div.App div.HomepageContainer .StoriesBannerContainer {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding-top: 40px;
-  padding-bottom: 40px;
   border: 1px solid red;
   align-items: center;
 }
@@ -114,6 +112,20 @@ body div#root div.App div.HomepageContainer .StoriesBannerContainer .StoryContai
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body div#root div.App div.HomepageContainer .StoriesBannerContainer .StoryContainer .StoryPosterProfileImage {
+  height: 70px;
+  width: auto;
+  border-radius: 50%;
+  border: 3px solid #7d82b8;
+}
+body div#root div.App div.HomepageContainer .StoriesBannerContainer .StoryContainer .StoryPosterUsername {
+  margin: 0px;
+  margin-top: 10px;
+  font-size: 15px;
 }
 body div#root div.App div.HomepageContainer div.HomepageCardHolder {
   display: flex;

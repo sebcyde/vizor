@@ -52,6 +52,7 @@ const registerWithEmailAndPassword = async (
 			ProfilePictureURL: '',
 			Bio: '',
 			Verified: false,
+			Gender: '',
 		});
 		user.displayName = UserName;
 		console.log('Registered Successfully');
