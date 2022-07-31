@@ -3,10 +3,13 @@ import Nav from '../Navbar/Nav';
 import Fab from '../Fab/Fab';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from '../Firebase/Firebase';
+import { auth, firebaseConfig } from '../Firebase/Firebase';
 import { Follow } from '../Actions/FollowUser/FollowUser';
 import { BlockUser } from '../Actions/BlockUser/BlockUser';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import { initializeApp } from 'firebase/app';
+import { querySnapshot } from './UserInfo/UserInfo';
+import StoriesBanner from './StoriesBanner/StoriesBanner';
 import {
 	Icon,
 	Col,
@@ -16,12 +19,22 @@ import {
 	Button,
 	Breadcrumb,
 } from 'react-materialize';
-import { querySnapshot } from './UserInfo/UserInfo';
-import StoriesBanner from './StoriesBanner/StoriesBanner';
+import {
+	getFirestore,
+	collection,
+	doc,
+	addDoc,
+	getDocs,
+	setDoc,
+	updateDoc,
+	FieldValue,
+	arrayUnion,
+} from 'firebase/firestore';
 
 function Homepage() {
 	const navigate = useNavigate();
-
+	const app = initializeApp(firebaseConfig);
+	const db = getFirestore(app);
 	const Access_Key = 'nMQhKYfCGhe3tce5azxV0KDvpsKH9zMIH1Ocp3IXhXM';
 	const [RenderedElements, setRenderedElements] = useState();
 	const [UserVisited, setUserVisited] = useState();
@@ -48,50 +61,60 @@ function Homepage() {
 
 	const PullData = async () => {
 		setLoading(true);
-		axios
-			.get(
-				`https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${Access_Key}`
-			)
-			.then((response) => {
-				response.data.results.forEach((Item) => {
-					ReturnedItems.push(Item);
+
+		// axios
+		// 	.get(
+		// 		`https://api.unsplash.com/search/photos?page=1&query=${img}&client_id=${Access_Key}`
+		// 	)
+
+		await getDocs(collection(db, 'users'))
+			.then((result) => {
+				let AllUsers = result.docs;
+				console.log(AllUsers);
+				return AllUsers;
+			})
+			.then((AllUsers) => {
+				AllUsers.forEach((user) => {
+					ReturnedItems.push(user);
 				});
 			})
 			.then(() => [
 				setRenderedElements(
-					ReturnedItems.map((Item) => {
+					ReturnedItems.map((user) => {
+						let userdata = user._document.data.value.mapValue.fields;
+						console.log(userdata);
+
 						return (
 							<div className="ImageContainer">
 								<span className="CreatorInfo">
-									<img
-										src={Item.user.profile_image.medium}
+									{/* <img
+										src={userdata.ProfilePictureURL.stringValue}
 										className="ProfilePhoto"
-									/>
+									/> */}
 									<p
 										onClick={() => {
-											VisitUsersPage(Item.user.username);
+											VisitUsersPage(userdata.DisplayName.stringValue);
 										}}
 									>
-										{Item.user.name}
+										{userdata.DisplayName.stringValue}
 									</p>
 									{/* <Icon className="UserPostMoreIcon">more_horiz</Icon> */}
 									<Button
 										className="FollowUserButton"
 										onClick={() => {
-											Follow(Item.user);
+											Follow(userdata);
 										}}
 									>
 										Follow
 									</Button>
 								</span>
-								<div>
+								{/* <div>
 									<img src={Item.urls.regular} />
 									<div className="ImageDetailContainer">
 										<span>
 											<Icon>thumb_up_off_alt</Icon>
 											<p>{Item.user.total_likes}</p>
-											{/* KOKO NI */}
-
+										
 											<a
 												onClick={() => {
 													Download(Item);
@@ -108,7 +131,7 @@ function Homepage() {
 											</p>
 										</div>
 									</div>
-								</div>
+								</div> */}
 							</div>
 						);
 					})

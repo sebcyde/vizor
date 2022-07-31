@@ -41,9 +41,9 @@ const registerWithEmailAndPassword = async (
 		console.log(user);
 		await setDoc(doc(db, 'users', user.uid), {
 			uid: user.uid,
-			name,
+			name: name,
 			authProvider: 'local',
-			email,
+			email: email,
 			DisplayName: UserName,
 			CreateDate: user.metadata.creationTime.slice(0, 16),
 			FollowedUsers: [],
@@ -51,7 +51,7 @@ const registerWithEmailAndPassword = async (
 			BlockedUsers: [],
 			ProfilePictureURL: '',
 			Bio: '',
-			Verified: Boolean,
+			Verified: false,
 		});
 		user.displayName = UserName;
 		console.log('Registered Successfully');

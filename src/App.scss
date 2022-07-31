@@ -103,6 +103,29 @@ body {
 				overflow: scroll;
 				background-attachment: fixed;
 
+				.StoriesBannerContainer {
+					display: flex;
+					flex-direction: row;
+					overflow-y: scroll;
+					height: fit-content;
+					padding-top: 40px;
+					padding-bottom: 40px;
+					border: 1px solid red;
+					align-items: center;
+
+					h2 {
+						margin: 0px;
+					}
+
+					.StoryContainer {
+						border: 1px solid blue;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-around;
+						height: fit-content;
+					}
+				}
+
 				div.HomepageCardHolder {
 					display: flex;
 					flex-direction: column;
