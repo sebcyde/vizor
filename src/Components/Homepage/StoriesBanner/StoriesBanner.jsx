@@ -69,7 +69,12 @@ function StoriesBanner() {
 		console.log(ReturnedUserInformation);
 	};
 
-	return <div className="StoriesBannerContainer">{Stories}</div>;
+	return (
+		<div className="StoriesBannerContainer">
+			<h3>Stories</h3>
+			{Stories}
+		</div>
+	);
 }
 
 export default StoriesBanner;
