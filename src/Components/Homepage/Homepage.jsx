@@ -17,6 +17,7 @@ import {
 	Breadcrumb,
 } from 'react-materialize';
 import { querySnapshot } from './UserInfo/UserInfo';
+import StoriesBanner from './StoriesBanner/StoriesBanner';
 
 function Homepage() {
 	const navigate = useNavigate();
@@ -73,15 +74,15 @@ function Homepage() {
 									>
 										{Item.user.name}
 									</p>
-									<Icon className="UserPostMoreIcon">more_horiz</Icon>
-									{/* <Button
+									{/* <Icon className="UserPostMoreIcon">more_horiz</Icon> */}
+									<Button
 										className="FollowUserButton"
 										onClick={() => {
-											Follow(Item.user.username);
+											Follow(Item.user);
 										}}
 									>
 										Follow
-									</Button> */}
+									</Button>
 								</span>
 								<div>
 									<img src={Item.urls.regular} />
@@ -222,6 +223,8 @@ function Homepage() {
 			) : (
 				<Nav />
 			)}
+
+			<StoriesBanner />
 			<Button
 				className="DataSnapshotButton"
 				onClick={

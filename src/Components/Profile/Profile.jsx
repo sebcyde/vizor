@@ -17,6 +17,7 @@ import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 import ThemeToggleSwitch from './ThemeToggleSwitch/ThemeToggleSwitch.jsx';
+import { DeleteAccount } from './DeleteAccount/DeleteAccount';
 
 function Profile() {
 	const [Loading, setLoading] = useState(true);
@@ -61,6 +62,10 @@ function Profile() {
 
 	const Logout = () => {
 		logout();
+	};
+
+	const DeleteUser = async () => {
+		DeleteAccount();
 	};
 
 	return (
@@ -168,7 +173,11 @@ function Profile() {
 										>
 											<p>Logout</p>
 										</CollectionItem>
-										<CollectionItem>
+										<CollectionItem
+											onClick={() => {
+												DeleteUser();
+											}}
+										>
 											<p>Delete Account</p>
 										</CollectionItem>
 										<Button

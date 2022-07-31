@@ -20,14 +20,12 @@ const db = getFirestore(app);
 const Follow = async (FollowedUser) => {
 	await getDocs(collection(db, 'users')).then((result) => {
 		let AllUsers = result.docs;
-		console.log(AllUsers);
 
 		AllUsers.forEach((DBuser) => {
 			if (
 				DBuser._document.data.value.mapValue.fields.uid.stringValue ===
 				auth.currentUser.uid
 			) {
-				console.log('Match Successful');
 				let UserInfo = DBuser._document.data.value.mapValue.fields;
 
 				const FollowRef = doc(db, 'users', UserInfo.uid.stringValue);
@@ -37,8 +35,6 @@ const Follow = async (FollowedUser) => {
 					{ FollowedUsers: arrayUnion(FollowedUser) },
 					{ merge: true }
 				);
-			} else {
-				console.log('Not A Match');
 			}
 		});
 
