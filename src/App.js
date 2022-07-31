@@ -23,10 +23,7 @@ function App() {
 	useEffect(() => {
 		const Body = document.body;
 		const color = window.localStorage.getItem('AppColorScheme');
-
 		Body.classList.add(color);
-
-		console.log(Body.classList);
 	}, []);
 
 	return (

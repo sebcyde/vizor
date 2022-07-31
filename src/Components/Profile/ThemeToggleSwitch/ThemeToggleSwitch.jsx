@@ -65,8 +65,6 @@ function ThemeToggleSwitch() {
 			onChange={() => {
 				SwitchTheme();
 			}}
-			offLabel="Light"
-			onLabel="Dark"
 			checked={toggle}
 		/>
 	);

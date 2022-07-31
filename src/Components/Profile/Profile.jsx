@@ -10,9 +10,9 @@ import {
 	Switch,
 	Button,
 } from 'react-materialize';
-import { auth, firebaseConfig } from '../Firebase/Firebase';
+import { auth, firebaseConfig, logout } from '../Firebase/Firebase';
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, deleteUser } from 'firebase/auth';
 import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 import { Link, useNavigate } from 'react-router-dom';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
@@ -57,6 +57,10 @@ function Profile() {
 
 			setLoading(false);
 		});
+	};
+
+	const Logout = () => {
+		logout();
 	};
 
 	return (
@@ -156,6 +160,16 @@ function Profile() {
 										<CollectionItem>
 											<p>Joined:</p>
 											<p>{UserDetails.CreateDate.stringValue}</p>
+										</CollectionItem>
+										<CollectionItem
+											onClick={() => {
+												Logout();
+											}}
+										>
+											<p>Logout</p>
+										</CollectionItem>
+										<CollectionItem>
+											<p>Delete Account</p>
 										</CollectionItem>
 										<Button
 											className="DataSnapshotButton"

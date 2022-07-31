@@ -16,6 +16,7 @@ import {
 	Button,
 	Breadcrumb,
 } from 'react-materialize';
+import { querySnapshot } from './UserInfo/UserInfo';
 
 function Homepage() {
 	const navigate = useNavigate();
@@ -23,6 +24,8 @@ function Homepage() {
 	const Access_Key = 'nMQhKYfCGhe3tce5azxV0KDvpsKH9zMIH1Ocp3IXhXM';
 	const [RenderedElements, setRenderedElements] = useState();
 	const [UserVisited, setUserVisited] = useState();
+	const [UserInformation, setUserInformation] = useState();
+	const [UserInfoElement, setUserInfoElement] = useState();
 	const [UsersPage, setUsersPage] = useState(false);
 	const [Loading, setLoading] = useState(true);
 	const [img, setImg] = useState('Anime');
@@ -111,13 +114,28 @@ function Homepage() {
 				),
 			])
 			.then(() => {
-				console.log(ReturnedItems);
 				setUsersPage(false);
 				setLoading(false);
 			});
 	};
 
 	const VisitUsersPage = async (UserNameToVisit) => {
+		await querySnapshot('muFoHZkBrCg1M4LyOquNYCjQG172').then((result) => {
+			setUserInfoElement(
+				result.map((Result) => {
+					return (
+						<div>
+							<h2>{Result.DisplayName}</h2>
+							<span>
+								<p>Following: {Result.FollowedUsers.length}</p>
+							</span>
+						</div>
+					);
+				})
+			);
+			return;
+		});
+
 		setLoading(true);
 		setUserVisited(UserNameToVisit);
 		axios
@@ -126,6 +144,7 @@ function Homepage() {
 			)
 			.then((response) => {
 				ReturnedItems = [];
+
 				response.data.forEach((Item) => {
 					ReturnedItems.push(Item);
 				});
@@ -177,16 +196,15 @@ function Homepage() {
 				),
 			])
 			.then(() => {
-				console.log(ReturnedItems);
 				setUsersPage(true);
 				setLoading(false);
 			});
 	};
 
 	// Will autopull data on page load
-	// useEffect(() => {
-	// PullData()
-	// }, []);
+	useEffect(() => {
+		PullData();
+	}, []);
 
 	return (
 		<div className="HomepageContainer">
@@ -216,10 +234,18 @@ function Homepage() {
 						  }
 				}
 			>
-				Refresh
+				Pull Data
 			</Button>
 			<div className="HomepageCardHolder">
-				{Loading ? <LoadingScreen /> : <>{RenderedElements}</>}
+				{Loading ? (
+					<LoadingScreen />
+				) : (
+					<>
+						{UsersPage ? { UserInfoElement } : null}
+
+						{RenderedElements}
+					</>
+				)}
 			</div>
 			<Fab />
 		</div>
