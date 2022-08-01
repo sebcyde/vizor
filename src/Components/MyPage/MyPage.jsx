@@ -96,6 +96,45 @@ function MyPage() {
 				<LoadingScreen />
 			) : (
 				<>
+					<div className="UserDataContainer">
+						<span className="PFPandFollowersContainer">
+							<img
+								src={
+									UserData.ProfilePictureURL.stringValue === ''
+										? require('../../Assets/DefaultMale.jpg')
+										: UserData.ProfilePictureURL.stringValue
+								}
+								className="ProfilePhoto"
+							/>
+							<span className="FollowersFollowingContainer">
+								<div className="PostsContainer">
+									<h3 className="Followers">
+										{UserData.FollowedByUsers.arrayValue.values
+											? UserData.FollowedByUsers.arrayValue.values
+											: '0'}
+									</h3>
+									<p>Posts</p>
+								</div>
+								<div className="FollowersContainer">
+									<h3 className="Followers">
+										{UserData.FollowedByUsers.arrayValue.values
+											? UserData.FollowedByUsers.arrayValue.values
+											: '0'}
+									</h3>
+									<p>Followers</p>
+								</div>
+								<div className="FollowingContainer">
+									<h3 className="Following">
+										{UserData.FollowedUsers.arrayValue.values.length}
+									</h3>
+									<p>Following</p>
+								</div>
+							</span>
+						</span>
+						<h3 className="UserName">{UserData.DisplayName.stringValue}</h3>
+						<p className="Bio">{UserData.Bio.stringValue}</p>
+					</div>
+
 					<Button
 						onClick={() => {
 							console.log(UserData);

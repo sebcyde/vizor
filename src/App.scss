@@ -154,6 +154,65 @@ body {
 
 			.MyPageContainer {
 				padding-bottom: 56px;
+
+				.UserDataContainer {
+					width: 100%;
+					display: flex;
+					flex-direction: column;
+
+					.PFPandFollowersContainer {
+						width: 95%;
+						margin-left: auto;
+						margin-right: auto;
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: center;
+						margin-top: 30px;
+
+						.ProfilePhoto {
+							height: 100px;
+							border-radius: 50%;
+							border: 7px solid $AccentColor;
+						}
+
+						.FollowersFollowingContainer {
+							width: 70%;
+							display: flex;
+							flex-direction: row;
+							justify-content: space-evenly;
+							align-items: center;
+
+							h3 {
+								font-size: 30px;
+								margin-bottom: 0px;
+							}
+							p {
+								margin-top: 10px;
+							}
+						}
+					}
+
+					.UserName {
+						width: 90%;
+						margin: 0px;
+						margin-top: 10px;
+						text-align: left;
+						margin-left: auto;
+						margin-right: auto;
+						font-size: 30px;
+					}
+					.Bio {
+						width: 90%;
+						margin: 0px;
+						margin-top: 10px;
+						text-align: left;
+						margin-left: auto;
+						margin-right: auto;
+						font-size: 20px;
+					}
+				}
+
 				.material-placeholder {
 					img {
 						margin: 20px;
