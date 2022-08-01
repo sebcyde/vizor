@@ -58,37 +58,6 @@ body {
 		}
 	}
 
-	.BottomNavbarContainer {
-		background-color: $LightModeBackground;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-evenly;
-		color: $AccentColor;
-		position: fixed;
-		bottom: 0px;
-
-		a {
-			height: fit-content;
-			font-size: 40px;
-			margin: 0px;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			justify-content: space-evenly;
-			color: $AccentColor;
-		}
-		span.BottomNavButton {
-			height: fit-content;
-			font-size: 40px;
-			margin: 0px;
-		}
-
-		span.BottomNavCollections {
-			font-size: 35px;
-		}
-	}
-
 	div#root {
 		height: 100%;
 		width: 100%;
@@ -100,6 +69,40 @@ body {
 			display: flex;
 			flex-direction: column;
 			background-attachment: fixed;
+
+			.BottomNavbarContainer {
+				background-color: $LightModeBackground;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-evenly;
+				color: $AccentColor;
+				position: fixed;
+				bottom: 0px;
+				z-index: 1000000;
+				height: 56px !important;
+				margin-top: auto;
+
+				a {
+					height: fit-content;
+					font-size: 40px;
+					margin: 0px;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-evenly;
+					color: $AccentColor;
+				}
+				span.BottomNavButton {
+					height: fit-content;
+					font-size: 40px;
+					margin: 0px;
+				}
+
+				span.BottomNavCollections {
+					font-size: 35px;
+				}
+			}
 
 			h2 {
 				color: $LightModeColor;
@@ -165,8 +168,8 @@ body {
 					flex-direction: row;
 					overflow-y: scroll;
 					height: fit-content;
-					margin-top: 5px;
 					align-items: center;
+					padding-top: 5px;
 
 					h2 {
 						margin: 0px;
@@ -179,7 +182,7 @@ body {
 						height: fit-content;
 						margin-left: 10px;
 						margin-top: 10px;
-						margin-bottom: 10px;
+						margin-bottom: 5px;
 
 						.StoryPosterProfileImage {
 							height: 70px;

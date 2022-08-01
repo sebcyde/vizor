@@ -1,5 +1,4 @@
 import Fab from '../Fab/Fab';
-import UploadFab from './UploadFab/UploadFab';
 import Nav from '../Navbar/TopNav/Nav';
 import React, { useState, useEffect } from 'react';
 import {
@@ -14,8 +13,10 @@ import { storage } from '../Firebase/FireStorage';
 import { v4 } from 'uuid';
 import { auth } from '../Firebase/Firebase';
 import { MediaBox } from 'react-materialize';
+import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
 function MyPage() {
+	const [Loading, setLoading] = useState(true);
 	const [imageUpload, setImageUpload] = useState(null);
 	const [imageUrls, setImageUrls] = useState([]);
 	const imagesListRef = ref(storage, `${auth.currentUser.uid}`);
@@ -23,6 +24,7 @@ function MyPage() {
 	const AllMetaData = [];
 
 	const uploadFile = () => {
+		setLoading(true);
 		if (imageUpload == null) return;
 		const imageRef = ref(
 			storage,
@@ -34,6 +36,7 @@ function MyPage() {
 				setImageUrls((prev) => [...prev, url]);
 			});
 		});
+		setLoading(false);
 	};
 
 	useEffect(() => {
@@ -64,41 +67,51 @@ function MyPage() {
 			.then(() => {
 				console.log(FinalImageList);
 				console.log(AllMetaData);
+				return;
+			})
+			.then(() => {
+				setLoading(false);
 			});
 	}, []);
 
 	return (
 		<div className="MyPageContainer">
 			<Nav />
-			<h2>My Page</h2>
-			<input
-				type="file"
-				onChange={(event) => {
-					setImageUpload(event.target.files[0]);
-				}}
-			/>
-			<button onClick={uploadFile}> Upload Image</button>
-			{imageUrls.map((url) => {
-				return (
-					<MediaBox
-						id="MediaBox_9"
-						caption={url}
-						options={{
-							inDuration: 275,
-							onCloseEnd: null,
-							onCloseStart: null,
-							onOpenEnd: null,
-							onOpenStart: null,
-							outDuration: 200,
+			{Loading ? (
+				<LoadingScreen />
+			) : (
+				<>
+					<h2>My Page</h2>
+					<input
+						type="file"
+						onChange={(event) => {
+							setImageUpload(event.target.files[0]);
 						}}
-					>
-						<img alt="" src={url} width="650" />
-					</MediaBox>
-				);
-				// return <img src={url} className="MyPageImage" />;
-			})}
-			{/* <UploadFab /> */}
-			<Fab />
+					/>
+					<button onClick={uploadFile}> Upload Image</button>
+					{imageUrls.map((url) => {
+						return (
+							<MediaBox
+								id="MediaBox_9"
+								caption={url}
+								options={{
+									inDuration: 275,
+									onCloseEnd: null,
+									onCloseStart: null,
+									onOpenEnd: null,
+									onOpenStart: null,
+									outDuration: 200,
+								}}
+							>
+								<img alt="" src={url} width="650" />
+							</MediaBox>
+						);
+						// return <img src={url} className="MyPageImage" />;
+					})}
+
+					<Fab />
+				</>
+			)}
 		</div>
 	);
 }
