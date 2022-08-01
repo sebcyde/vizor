@@ -27,7 +27,11 @@ body .material-placeholder img {
   border: 1px solid red;
 }
 body .NavbarContainer {
-  background-color: #7d82b8;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #7d82b8;
 }
 body .NavbarContainer a {
   height: 100%;
@@ -38,6 +42,14 @@ body .NavbarContainer a {
 body .NavbarContainer a .NavbarLogo {
   padding-left: 10px;
   height: 40px;
+}
+body .NavbarContainer span.NavDMButton {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 40px;
+  margin-left: auto;
+  padding-right: 10px;
 }
 body div#root {
   height: 100%;
@@ -111,14 +123,13 @@ body div#root div.App div.HomepageContainer .StoriesBannerContainer {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  border: 1px solid red;
+  margin-top: 5px;
   align-items: center;
 }
 body div#root div.App div.HomepageContainer .StoriesBannerContainer h2 {
   margin: 0px;
 }
 body div#root div.App div.HomepageContainer .StoriesBannerContainer .StoryContainer {
-  border: 1px solid blue;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

@@ -5,11 +5,11 @@ import Vlogo from '../../Assets/VLogo.ico';
 function Nav() {
 	return (
 		<nav className="NavbarContainer">
-			{
-				<a className="brand-logo left">
-					<img src={Vlogo} className="NavbarLogo" />
-				</a>
-			}
+			<a className="brand-logo left">
+				<img src={Vlogo} className="NavbarLogo" />
+			</a>
+
+			<span class="material-symbols-outlined NavDMButton">send</span>
 		</nav>
 	);
 }

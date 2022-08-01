@@ -34,7 +34,12 @@ body {
 	}
 
 	.NavbarContainer {
-		background-color: $AccentColor;
+		background-color: $LightModeBackground;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		color: $AccentColor;
+
 		a {
 			height: 100%;
 			display: flex;
@@ -44,6 +49,12 @@ body {
 				padding-left: 10px;
 				height: 40px;
 			}
+		}
+		span.NavDMButton {
+			height: fit-content;
+			font-size: 40px;
+			margin-left: auto;
+			padding-right: 10px;
 		}
 	}
 
@@ -123,8 +134,7 @@ body {
 					flex-direction: row;
 					overflow-y: scroll;
 					height: fit-content;
-
-					border: 1px solid red;
+					margin-top: 5px;
 					align-items: center;
 
 					h2 {
@@ -132,7 +142,6 @@ body {
 					}
 
 					.StoryContainer {
-						border: 1px solid blue;
 						display: flex;
 						flex-direction: column;
 						justify-content: space-around;
