@@ -46,6 +46,8 @@ function StoriesBanner() {
 						let Info = user.mapValue.fields;
 						let PFP =
 							Info.ProfilePictureURL.mapValue.fields.stringValue.stringValue;
+
+						// Add in User.Gender check for Default image here
 						console.log(DefaultMale);
 						console.log(Info);
 						return (
@@ -69,12 +71,7 @@ function StoriesBanner() {
 		console.log(ReturnedUserInformation);
 	};
 
-	return (
-		<div className="StoriesBannerContainer">
-			<h3>Stories</h3>
-			{Stories}
-		</div>
-	);
+	return <div className="StoriesBannerContainer">{Stories}</div>;
 }
 
 export default StoriesBanner;

@@ -32,6 +32,21 @@ body {
 			border: 1px solid red;
 		}
 	}
+
+	.NavbarContainer {
+		background-color: $AccentColor;
+		a {
+			height: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			.NavbarLogo {
+				padding-left: 10px;
+				height: 40px;
+			}
+		}
+	}
+
 	div#root {
 		height: 100%;
 		width: 100%;

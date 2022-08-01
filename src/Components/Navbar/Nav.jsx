@@ -1,30 +1,16 @@
 import React from 'react';
 import { Navbar, Icon, NavItem } from 'react-materialize';
+import Vlogo from '../../Assets/VLogo.ico';
 
 function Nav() {
 	return (
-		<Navbar
-			alignLinks="right"
-			brand={
-				<a className="brand-logo" href="#">
-					Logo
+		<nav className="NavbarContainer">
+			{
+				<a className="brand-logo left">
+					<img src={Vlogo} className="NavbarLogo" />
 				</a>
 			}
-			id="mobile-nav"
-			menuIcon={<Icon>menu</Icon>}
-			options={{
-				draggable: true,
-				edge: 'left',
-				inDuration: 250,
-				onCloseEnd: null,
-				onCloseStart: null,
-				onOpenEnd: null,
-				onOpenStart: null,
-				outDuration: 200,
-				preventScrolling: true,
-			}}
-			search
-		></Navbar>
+		</nav>
 	);
 }
 

@@ -26,6 +26,19 @@ body .material-placeholder img {
   padding: 20px;
   border: 1px solid red;
 }
+body .NavbarContainer {
+  background-color: #7d82b8;
+}
+body .NavbarContainer a {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body .NavbarContainer a .NavbarLogo {
+  padding-left: 10px;
+  height: 40px;
+}
 body div#root {
   height: 100%;
   width: 100%;
