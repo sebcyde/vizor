@@ -1,8 +1,10 @@
 import React from 'react';
 import { Navbar, Icon, NavItem } from 'react-materialize';
-import Vlogo from '../../Assets/VLogo.ico';
+import Vlogo from '../../../Assets/VLogo.ico';
 
 function Nav() {
+	// Span will navigate to DMs Page
+
 	return (
 		<nav className="NavbarContainer">
 			<a className="brand-logo left">

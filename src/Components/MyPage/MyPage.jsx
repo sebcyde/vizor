@@ -1,6 +1,6 @@
 import Fab from '../Fab/Fab';
 import UploadFab from './UploadFab/UploadFab';
-import Nav from '../Navbar/Nav';
+import Nav from '../Navbar/TopNav/Nav';
 import React, { useState, useEffect } from 'react';
 import {
 	ref,

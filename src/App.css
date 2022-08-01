@@ -14,7 +14,7 @@ body .DataSnapshotButton {
   margin-top: 50px;
   background-color: #3fa7d6;
   position: fixed;
-  bottom: 30px;
+  bottom: 80px;
   left: 150px;
 }
 body .material-placeholder img {
@@ -50,6 +50,38 @@ body .NavbarContainer span.NavDMButton {
   font-size: 40px;
   margin-left: auto;
   padding-right: 10px;
+}
+body .BottomNavbarContainer {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #7d82b8;
+  position: fixed;
+  bottom: 0px;
+}
+body .BottomNavbarContainer a {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 40px;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #7d82b8;
+}
+body .BottomNavbarContainer span.BottomNavButton {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 40px;
+  margin: 0px;
+}
+body .BottomNavbarContainer span.BottomNavCollections {
+  font-size: 35px;
 }
 body div#root {
   height: 100%;

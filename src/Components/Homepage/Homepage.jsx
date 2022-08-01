@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from 'react';
-import Nav from '../Navbar/Nav';
+import Nav from '../Navbar/TopNav/Nav';
 import Fab from '../Fab/Fab';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -30,6 +30,7 @@ import {
 	FieldValue,
 	arrayUnion,
 } from 'firebase/firestore';
+import BottomNav from '../Navbar/BottomNav/BottomNav';
 
 function Homepage() {
 	const navigate = useNavigate();

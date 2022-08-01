@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Nav from '../Navbar/Nav';
+import Nav from '../Navbar/TopNav/Nav';
 import Fab from '../Fab/Fab';
 import { auth } from '../Firebase/Firebase';
 

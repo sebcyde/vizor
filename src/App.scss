@@ -17,7 +17,7 @@ body {
 		margin-top: 50px;
 		background-color: $AccentColorTwo;
 		position: fixed;
-		bottom: 30px;
+		bottom: 80px;
 		left: 150px;
 	}
 
@@ -55,6 +55,37 @@ body {
 			font-size: 40px;
 			margin-left: auto;
 			padding-right: 10px;
+		}
+	}
+
+	.BottomNavbarContainer {
+		background-color: $LightModeBackground;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-evenly;
+		color: $AccentColor;
+		position: fixed;
+		bottom: 0px;
+
+		a {
+			height: fit-content;
+			font-size: 40px;
+			margin: 0px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-evenly;
+			color: $AccentColor;
+		}
+		span.BottomNavButton {
+			height: fit-content;
+			font-size: 40px;
+			margin: 0px;
+		}
+
+		span.BottomNavCollections {
+			font-size: 35px;
 		}
 	}
 

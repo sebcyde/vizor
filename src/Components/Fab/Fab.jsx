@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, Link, usNavigate, useNavigate } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { Button, Icon, Col, Card, CardTitle } from 'react-materialize';
 import { logout, auth } from '../Firebase/Firebase';
 import { onAuthStateChanged } from 'firebase/auth';
