@@ -42,6 +42,7 @@ function App() {
 							<Route path="/Library" element={<Library />} />
 							<Route path="/LikedImages" element={<LikedImages />} />
 							{/* <Route path="/Explore" element={<ExplorePage />} /> */}
+							{/* <Route path="/Upload" element={<UploadPage />} /> */}
 							<Route path="/Profile" element={<Profile />} />
 						</Routes>
 						<BottomNav />

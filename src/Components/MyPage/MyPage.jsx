@@ -14,9 +14,11 @@ import { v4 } from 'uuid';
 import { auth } from '../Firebase/Firebase';
 import { MediaBox } from 'react-materialize';
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import { querySnapshot } from '../Homepage/UserInfo/UserInfo';
 
 function MyPage() {
 	const [Loading, setLoading] = useState(true);
+	const [UserData, setUserData] = useState();
 	const [imageUpload, setImageUpload] = useState(null);
 	const [imageUrls, setImageUrls] = useState([]);
 	const imagesListRef = ref(storage, `${auth.currentUser.uid}`);
@@ -40,39 +42,52 @@ function MyPage() {
 	};
 
 	useEffect(() => {
-		listAll(imagesListRef)
-			.then((response) => {
-				response.items.forEach((item) => {
-					console.log(item);
-					getDownloadURL(item).then((url) => {
-						if (FinalImageList.length >= response.items.length) {
-						} else {
-							FinalImageList.push(url);
-							setImageUrls((prev) => [...prev, url]);
-						}
-					});
-					getMetadata(item)
-						.then((metadata) => {
-							console.log(metadata);
-							if (AllMetaData.length >= response.items.length) {
-							} else {
-								AllMetaData.push(metadata);
-							}
-						})
-						.catch((error) => {
-							console.log(error);
-						});
-				});
-			})
-			.then(() => {
-				console.log(FinalImageList);
-				console.log(AllMetaData);
+		Run();
+	}, []);
+
+	const Run = async () => {
+		await querySnapshot(auth.currentUser.uid)
+			.then((Data) => {
+				console.log(Data[0]);
+				setUserData(Data[0]);
 				return;
 			})
 			.then(() => {
-				setLoading(false);
+				listAll(imagesListRef)
+					.then((response) => {
+						response.items.forEach((item) => {
+							console.log(item);
+							getDownloadURL(item).then((url) => {
+								if (FinalImageList.length >= response.items.length) {
+								} else {
+									FinalImageList.push(url);
+									setImageUrls((prev) => [...prev, url]);
+								}
+							});
+							getMetadata(item)
+								.then((metadata) => {
+									console.log(metadata);
+									if (AllMetaData.length >= response.items.length) {
+									} else {
+										AllMetaData.push(metadata);
+									}
+								})
+								.catch((error) => {
+									console.log(error);
+								});
+						});
+					})
+					.then(() => {
+						console.log(FinalImageList);
+						console.log(AllMetaData);
+						return;
+					})
+					.then(() => {
+						setLoading(false);
+						console.log(UserData);
+					});
 			});
-	}, []);
+	};
 
 	return (
 		<div className="MyPageContainer">
@@ -81,14 +96,6 @@ function MyPage() {
 				<LoadingScreen />
 			) : (
 				<>
-					<h2>My Page</h2>
-					<input
-						type="file"
-						onChange={(event) => {
-							setImageUpload(event.target.files[0]);
-						}}
-					/>
-					<button onClick={uploadFile}> Upload Image</button>
 					{imageUrls.map((url) => {
 						return (
 							<MediaBox

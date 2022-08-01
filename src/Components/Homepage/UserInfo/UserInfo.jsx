@@ -4,7 +4,6 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 
-const User = auth.currentUser;
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 

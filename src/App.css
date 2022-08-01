@@ -17,15 +17,6 @@ body .DataSnapshotButton {
   bottom: 80px;
   left: 150px;
 }
-body .material-placeholder img {
-  margin: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  height: auto;
-  padding: 20px;
-  border: 1px solid red;
-}
 body .NavbarContainer {
   background-color: #ffffff;
   display: flex;
@@ -51,6 +42,14 @@ body .NavbarContainer span.NavDMButton {
   margin-left: auto;
   padding-right: 10px;
 }
+body .NavbarContainer span.NavUploadButton {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 35px;
+  margin-left: auto;
+  padding-right: 10px;
+}
 body div#root {
   height: 100%;
   width: 100%;
@@ -62,6 +61,36 @@ body div#root div.App {
   display: flex;
   flex-direction: column;
   background-attachment: fixed;
+}
+body div#root div.App nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 1000000;
+}
+body div#root div.App nav div.nav-wrapper {
+  background-color: #7d82b8;
+}
+body div#root div.App nav div.nav-wrapper input {
+  font-family: "Edu VIC WA NT Beginner", cursive;
+  color: #1d1d1d;
+}
+body div#root div.App ul#mobile-nav li {
+  padding: 20px;
+  border-bottom: 1px solid #7d82b8;
+}
+body div#root div.App ul#mobile-nav li .MenuBarItem {
+  font-size: 25px;
+  color: #1d1d1d;
+}
+body div#root div.App a.MenuButton {
+  background-color: #7d82b8;
+}
+body div#root div.App button.SubMenuButton {
+  background-color: #7d82b8;
+}
+body div#root div.App h2 {
+  color: #1d1d1d;
 }
 body div#root div.App .BottomNavbarContainer {
   background-color: #ffffff;
@@ -98,9 +127,6 @@ body div#root div.App .BottomNavbarContainer span.BottomNavButton {
 body div#root div.App .BottomNavbarContainer span.BottomNavCollections {
   font-size: 35px;
 }
-body div#root div.App h2 {
-  color: #1d1d1d;
-}
 body div#root div.App div.LoadingScreenContainer {
   height: 100%;
   width: 100%;
@@ -119,32 +145,17 @@ body div#root div.App div.LoadingScreenContainer span {
 body div#root div.App div.LoadingScreenContainer h3 {
   font-size: 30px;
 }
-body div#root div.App nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0px;
-  z-index: 1000000;
+body div#root div.App .MyPageContainer {
+  padding-bottom: 56px;
 }
-body div#root div.App nav div.nav-wrapper {
-  background-color: #7d82b8;
-}
-body div#root div.App nav div.nav-wrapper input {
-  font-family: "Edu VIC WA NT Beginner", cursive;
-  color: #1d1d1d;
-}
-body div#root div.App ul#mobile-nav li {
+body div#root div.App .MyPageContainer .material-placeholder img {
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: auto;
   padding: 20px;
-  border-bottom: 1px solid #7d82b8;
-}
-body div#root div.App ul#mobile-nav li .MenuBarItem {
-  font-size: 25px;
-  color: #1d1d1d;
-}
-body div#root div.App a.MenuButton {
-  background-color: #7d82b8;
-}
-body div#root div.App button.SubMenuButton {
-  background-color: #7d82b8;
+  border: 1px solid red;
 }
 body div#root div.App div.HomepageContainer {
   height: 100%;
