@@ -142,27 +142,29 @@ function MyPage() {
 					>
 						Pull Data
 					</Button>
-
-					{imageUrls.map((url) => {
-						return (
-							<MediaBox
-								id="MediaBox_9"
-								caption={url}
-								options={{
-									inDuration: 275,
-									onCloseEnd: null,
-									onCloseStart: null,
-									onOpenEnd: null,
-									onOpenStart: null,
-									outDuration: 200,
-								}}
-							>
-								<img alt="" src={url} width="650" />
-							</MediaBox>
-						);
-						// return <img src={url} className="MyPageImage" />;
-					})}
-
+					<div class="grid-container">
+						{imageUrls.map((url) => {
+							//add in Lazy Loading for images
+							// Grid is loading all in one row instead of three per row
+							return (
+								<MediaBox
+									id="MediaBox_9"
+									caption={url}
+									options={{
+										inDuration: 275,
+										onCloseEnd: null,
+										onCloseStart: null,
+										onOpenEnd: null,
+										onOpenStart: null,
+										outDuration: 200,
+									}}
+								>
+									<img alt="" src={url} width="650" className="grid-item" />
+								</MediaBox>
+							);
+							// return <img src={url} className="MyPageImage" />;
+						})}
+					</div>
 					<Fab />
 				</>
 			)}

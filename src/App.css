@@ -148,6 +148,12 @@ body div#root div.App div.LoadingScreenContainer h3 {
 body div#root div.App .MyPageContainer {
   padding-bottom: 56px;
 }
+body div#root div.App .MyPageContainer button {
+  position: fixed;
+  bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
 body div#root div.App .MyPageContainer .UserDataContainer {
   width: 100%;
   display: flex;
@@ -189,25 +195,35 @@ body div#root div.App .MyPageContainer .UserDataContainer .UserName {
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  font-size: 30px;
+  font-size: 25px;
 }
 body div#root div.App .MyPageContainer .UserDataContainer .Bio {
   width: 90%;
   margin: 0px;
   margin-top: 10px;
+  margin-bottom: 15px;
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  font-size: 20px;
+  font-size: 15px;
 }
-body div#root div.App .MyPageContainer .material-placeholder img {
-  margin: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  height: auto;
-  padding: 20px;
+body div#root div.App .MyPageContainer .grid-container {
+  display: grid;
+  width: 100vw;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+}
+body div#root div.App .MyPageContainer .grid-container .material-placeholder {
+  aspect-ratio: 1/1;
+  border: 1px solid black;
+  overflow: hidden;
+}
+body div#root div.App .MyPageContainer .grid-container .material-placeholder img {
+  width: 100%;
+  padding-bottom: 100%;
   border: 1px solid red;
+  margin: 0px;
+  overflow: hidden;
 }
 body div#root div.App div.HomepageContainer {
   height: 100%;
