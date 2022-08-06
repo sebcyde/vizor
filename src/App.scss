@@ -163,6 +163,26 @@ body {
 				}
 			}
 
+			.MessagesContainer {
+				.tabs {
+					height: 56px;
+					display: flex;
+					align-items: center;
+					li {
+						background-color: white;
+
+						a {
+							color: $AccentColor;
+							font-size: 17px;
+							text-transform: capitalize;
+						}
+					}
+					li.indicator {
+						background-color: $AccentColor;
+					}
+				}
+			}
+
 			.MyPageContainer {
 				padding-bottom: 56px;
 
