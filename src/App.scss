@@ -33,24 +33,33 @@ body {
 			display: flex;
 			flex-direction: row;
 			align-items: center;
+			color: $AccentColor;
 			.NavbarLogo {
 				padding-left: 10px;
 				height: 40px;
 			}
 		}
-		span.NavDMButton {
-			height: fit-content;
-			font-size: 40px;
+
+		& > span {
+			display: flex;
+			width: fit-content;
 			margin-left: auto;
-			padding-right: 10px;
-		}
-		a {
-			color: $AccentColor;
-			margin-left: auto;
-			span.NavSettingsButton {
+			span.NavDMButton {
+				height: fit-content;
+				font-size: 40px;
+				margin-left: auto;
+				padding-right: 10px;
+			}
+			span.NavEditButton {
 				height: fit-content;
 				font-size: 35px;
 				margin-left: auto;
+				padding-right: 10px;
+			}
+			span.NavSettingsButton {
+				height: fit-content;
+				font-size: 35px;
+				margin-left: 5px;
 				padding-right: 10px;
 			}
 		}
@@ -130,8 +139,9 @@ body {
 				a:nth-of-type(3) > span.BottomNavButton {
 					border: 3px solid $AccentColor;
 					border-radius: 50%;
-					padding: 9px;
+					padding: 10px;
 					font-weight: 500;
+					background-color: $LightModeBackground;
 				}
 				span.BottomNavButton {
 					height: fit-content;

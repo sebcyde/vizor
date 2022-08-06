@@ -276,7 +276,6 @@ function Homepage() {
 					</>
 				)}
 			</div>
-			<Fab />
 		</div>
 	);
 }

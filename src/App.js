@@ -5,7 +5,7 @@ import M from 'materialize-css';
 import Nav from './Components/Navbar/TopNav/Nav';
 import Profile from './Components/Profile/Profile';
 import Homepage from './Components/Homepage/Homepage';
-import Library from './Components/Library/Library';
+import Favourites from './Components/Favourites/Favourites';
 import LikedImages from './Components/LikedImages/LikedImages';
 import LoadingScreen from './Components/LoadingScreen/LoadingScreen';
 import LoginPage from './Components/LoginPage/LoginPage';
@@ -15,6 +15,7 @@ import BottomNav from './Components/Navbar/BottomNav/BottomNav';
 import Explore from './Components/Explore/Explore';
 import Upload from './Components/MyPage/Upload/Upload';
 import Messages from './Components/Messages/Messages';
+import EditProfile from './Components/MyPage/EditProfile/EditProfile';
 
 function App() {
 	const [Loading, setLoading] = useState(true);
@@ -42,12 +43,13 @@ function App() {
 							<Route path="/register" element={<RegisterPage />} />
 							<Route path="/Homepage" element={<Homepage />} />
 							<Route path="/MyPage" element={<MyPage />} />
-							<Route path="/Library" element={<Library />} />
+							<Route path="/Favourites" element={<Favourites />} />
 							<Route path="/LikedImages" element={<LikedImages />} />
 							<Route path="/Explore" element={<Explore />} />
 							<Route path="/Upload" element={<Upload />} />
 							<Route path="/Profile" element={<Profile />} />
 							<Route path="/Messages" element={<Messages />} />
+							<Route path="/EditProfile" element={<EditProfile />} />
 						</Routes>
 						<BottomNav />
 					</>

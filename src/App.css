@@ -29,12 +29,20 @@ body .NavbarContainer a {
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: #7d82b8;
 }
 body .NavbarContainer a .NavbarLogo {
   padding-left: 10px;
   height: 40px;
 }
-body .NavbarContainer span.NavDMButton {
+body .NavbarContainer > span {
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: auto;
+}
+body .NavbarContainer > span span.NavDMButton {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -42,16 +50,20 @@ body .NavbarContainer span.NavDMButton {
   margin-left: auto;
   padding-right: 10px;
 }
-body .NavbarContainer a {
-  color: #7d82b8;
-  margin-left: auto;
-}
-body .NavbarContainer a span.NavSettingsButton {
+body .NavbarContainer > span span.NavEditButton {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   font-size: 35px;
   margin-left: auto;
+  padding-right: 10px;
+}
+body .NavbarContainer > span span.NavSettingsButton {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 35px;
+  margin-left: 5px;
   padding-right: 10px;
 }
 body div#root {
@@ -124,8 +136,9 @@ body div#root div.App .BottomNavbarContainer a {
 body div#root div.App .BottomNavbarContainer a:nth-of-type(3) > span.BottomNavButton {
   border: 3px solid #7d82b8;
   border-radius: 50%;
-  padding: 9px;
+  padding: 10px;
   font-weight: 500;
+  background-color: #ffffff;
 }
 body div#root div.App .BottomNavbarContainer span.BottomNavButton {
   height: -webkit-fit-content;

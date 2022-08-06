@@ -14,19 +14,26 @@ function Nav() {
 			</a>
 
 			{location.pathname === '/Homepage' ? (
-				<Link to="/Messages">
-					<span class="material-symbols-outlined NavDMButton">send</span>
-				</Link>
+				<span>
+					<Link to="/Messages">
+						<span class="material-symbols-outlined NavDMButton">send</span>
+					</Link>
+				</span>
 			) : (
 				''
 			)}
 
 			{location.pathname === '/MyPage' ? (
-				<Link to="/Profile">
-					<span class="material-symbols-outlined NavSettingsButton">
-						settings
-					</span>
-				</Link>
+				<span>
+					<Link to="/EditProfile">
+						<span class="material-symbols-outlined NavEditButton">edit</span>
+					</Link>
+					<Link to="/Profile">
+						<span class="material-symbols-outlined NavSettingsButton">
+							settings
+						</span>
+					</Link>
+				</span>
 			) : (
 				''
 			)}

@@ -4,7 +4,7 @@ import Nav from '../Navbar/TopNav/Nav';
 import Fab from '../Fab/Fab';
 import { auth } from '../Firebase/Firebase';
 
-function Library() {
+function Favourites() {
 	const user = auth;
 	const navigate = useNavigate;
 
@@ -19,10 +19,9 @@ function Library() {
 	return (
 		<div className="LibraryContainer">
 			<Nav />
-			<h2>Collections</h2>
-			<Fab />
+			<h2>Favourites</h2>
 		</div>
 	);
 }
 
-export default Library;
+export default Favourites;

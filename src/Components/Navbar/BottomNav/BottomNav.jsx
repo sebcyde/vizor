@@ -17,7 +17,7 @@ function BottomNav() {
 				<span class="material-symbols-outlined BottomNavButton">add</span>
 			</Link>
 
-			<Link to="/Library">
+			<Link to="/Favourites">
 				<span class="material-symbols-outlined BottomNavButton BottomNavCollections">
 					collections_bookmark
 				</span>

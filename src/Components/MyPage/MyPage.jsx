@@ -165,7 +165,6 @@ function MyPage() {
 							// return <img src={url} className="MyPageImage" />;
 						})}
 					</div>
-					<Fab />
 				</>
 			)}
 		</div>

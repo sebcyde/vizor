@@ -193,8 +193,6 @@ function Profile() {
 					)}
 				</Tab>
 			</Tabs>
-
-			<Fab />
 		</div>
 	);
 }
