@@ -12,16 +12,32 @@ import {
 import { storage } from '../../Firebase/FireStorage';
 import { auth } from '../../Firebase/Firebase';
 import LoadingScreen from '../../LoadingScreen/LoadingScreen';
+import BarLoader from 'react-spinners/HashLoader';
 
 function EditProfile() {
 	const [Loading, setLoading] = useState(true);
 	const [UserData, setUserData] = useState();
-
-	const RawUserData = [];
+	const [SaveChangesText, setSaveChangesText] = useState('Save Changes');
 
 	useEffect(() => {
 		Run();
 	}, []);
+
+	const Upload = async () => {
+		console.log('Upload Start');
+		setTimeout(() => {
+			console.log('Upload End');
+		}, 3000);
+	};
+
+	const UpdateDetails = async () => {
+		setSaveChangesText(<BarLoader color={'#7d82b8'} size={30} />);
+		console.log('UD Function Start');
+
+		await Upload().then(() => {
+			setSaveChangesText('Changes Saved');
+		});
+	};
 
 	const Run = async () => {
 		await querySnapshot(auth.currentUser.uid)
@@ -35,7 +51,10 @@ function EditProfile() {
 	};
 
 	return (
-		<div>
+		<div
+			className="EditProfileContainer
+    "
+		>
 			<Nav />
 			{Loading ? (
 				<LoadingScreen />
@@ -49,18 +68,20 @@ function EditProfile() {
 									: UserData.ProfilePictureURL.stringValue
 							}
 						/>
-						<a>Change Profile Photo</a>
-						<a>Remove Profile Photo</a>
+						<span>
+							<a>Change Profile Photo</a>
+							<a>Remove Profile Photo</a>
+						</span>
 					</span>
 					<span className="NameSpan">
 						<input type="text" placeholder="Name" />
 					</span>
 					<span className="UserNameSpan">
-						<input type="text" placeholder="UserName" />
+						<input type="text" placeholder="Username" />
 					</span>
-					<span className="PronounsSpan">
+					{/* <span className="PronounsSpan">
 						<input type="text" placeholder="Pronouns" />
-					</span>
+					</span> */}
 					<span className="WebsiteSpan">
 						<input type="text" placeholder="Website" />
 					</span>
@@ -73,7 +94,13 @@ function EditProfile() {
 
 					<span className=""></span>
 					<span className=""></span>
-					<a>Save Changes</a>
+					<a
+						onClick={() => {
+							UpdateDetails();
+						}}
+					>
+						{SaveChangesText}
+					</a>
 				</form>
 			)}
 		</div>

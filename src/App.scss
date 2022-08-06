@@ -193,6 +193,70 @@ body {
 				}
 			}
 
+			.EditProfileContainer {
+				height: 100%;
+				overflow: scroll;
+				background-attachment: fixed;
+
+				form {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+				}
+
+				& > form > span {
+					width: 100%;
+					margin-top: 10px;
+
+					> input {
+						width: 90%;
+						border-bottom: 1px solid $AccentColor;
+						&::placeholder {
+							color: $AccentColor;
+						}
+					}
+				}
+
+				& > form > a {
+					width: fit-content;
+					margin-top: 20px;
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+				input:focus {
+					border-bottom: 2px solid $AccentColor;
+					box-shadow: 0 1px 0 0 $AccentColor;
+				}
+
+				.PhotoSpan {
+					margin: 0;
+					padding: 40px;
+					padding-bottom: 0px;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-evenly;
+					align-items: center;
+					height: fit-content;
+					img {
+						border-radius: 50%;
+						width: 150px;
+						height: auto;
+						border: 5px solid $AccentColor;
+					}
+					span {
+						display: flex;
+						flex-direction: column;
+						height: 100px;
+						padding-bottom: 10px;
+						a:nth-of-type(1) {
+							margin-top: 40px;
+							margin-bottom: 5px;
+						}
+					}
+				}
+			}
+
 			.MyPageContainer {
 				padding-bottom: 56px;
 
