@@ -14,15 +14,19 @@ function Nav() {
 			</a>
 
 			{location.pathname === '/Homepage' ? (
-				<span class="material-symbols-outlined NavDMButton">send</span>
+				<Link to="/Messages">
+					<span class="material-symbols-outlined NavDMButton">send</span>
+				</Link>
 			) : (
 				''
 			)}
 
 			{location.pathname === '/MyPage' ? (
-				<span class="material-symbols-outlined NavUploadButton">
-					library_add
-				</span>
+				<Link to="/Profile">
+					<span class="material-symbols-outlined NavSettingsButton">
+						settings
+					</span>
+				</Link>
 			) : (
 				''
 			)}

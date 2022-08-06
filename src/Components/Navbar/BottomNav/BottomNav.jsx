@@ -12,6 +12,11 @@ function BottomNav() {
 			<Link to="/Explore">
 				<span class="material-symbols-outlined BottomNavButton">search</span>
 			</Link>
+
+			<Link to="/Upload">
+				<span class="material-symbols-outlined BottomNavButton">add</span>
+			</Link>
+
 			<Link to="/Library">
 				<span class="material-symbols-outlined BottomNavButton BottomNavCollections">
 					collections_bookmark

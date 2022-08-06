@@ -44,11 +44,15 @@ body {
 			margin-left: auto;
 			padding-right: 10px;
 		}
-		span.NavUploadButton {
-			height: fit-content;
-			font-size: 35px;
+		a {
+			color: $AccentColor;
 			margin-left: auto;
-			padding-right: 10px;
+			span.NavSettingsButton {
+				height: fit-content;
+				font-size: 35px;
+				margin-left: auto;
+				padding-right: 10px;
+			}
 		}
 	}
 

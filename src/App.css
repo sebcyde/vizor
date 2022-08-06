@@ -42,7 +42,11 @@ body .NavbarContainer span.NavDMButton {
   margin-left: auto;
   padding-right: 10px;
 }
-body .NavbarContainer span.NavUploadButton {
+body .NavbarContainer a {
+  color: #7d82b8;
+  margin-left: auto;
+}
+body .NavbarContainer a span.NavSettingsButton {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;

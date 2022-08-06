@@ -12,6 +12,9 @@ import LoginPage from './Components/LoginPage/LoginPage';
 import RegisterPage from './Components/RegisterPage/RegisterPage';
 import MyPage from './Components/MyPage/MyPage';
 import BottomNav from './Components/Navbar/BottomNav/BottomNav';
+import Explore from './Components/Explore/Explore';
+import Upload from './Components/MyPage/Upload/Upload';
+import Messages from './Components/Messages/Messages';
 
 function App() {
 	const [Loading, setLoading] = useState(true);
@@ -41,9 +44,10 @@ function App() {
 							<Route path="/MyPage" element={<MyPage />} />
 							<Route path="/Library" element={<Library />} />
 							<Route path="/LikedImages" element={<LikedImages />} />
-							{/* <Route path="/Explore" element={<ExplorePage />} /> */}
-							{/* <Route path="/Upload" element={<UploadPage />} /> */}
+							<Route path="/Explore" element={<Explore />} />
+							<Route path="/Upload" element={<Upload />} />
 							<Route path="/Profile" element={<Profile />} />
+							<Route path="/Messages" element={<Messages />} />
 						</Routes>
 						<BottomNav />
 					</>
