@@ -121,6 +121,12 @@ body div#root div.App .BottomNavbarContainer a {
   justify-content: space-evenly;
   color: #7d82b8;
 }
+body div#root div.App .BottomNavbarContainer a:nth-of-type(3) > span.BottomNavButton {
+  border: 3px solid #7d82b8;
+  border-radius: 50%;
+  padding: 9px;
+  font-weight: 500;
+}
 body div#root div.App .BottomNavbarContainer span.BottomNavButton {
   height: -webkit-fit-content;
   height: -moz-fit-content;

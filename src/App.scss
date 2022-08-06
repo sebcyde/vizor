@@ -115,6 +115,7 @@ body {
 				z-index: 1000000;
 				height: 56px !important;
 				margin-top: auto;
+				// border-top: 2px solid $AccentColor;
 
 				a {
 					height: fit-content;
@@ -125,6 +126,12 @@ body {
 					align-items: center;
 					justify-content: space-evenly;
 					color: $AccentColor;
+				}
+				a:nth-of-type(3) > span.BottomNavButton {
+					border: 3px solid $AccentColor;
+					border-radius: 50%;
+					padding: 9px;
+					font-weight: 500;
 				}
 				span.BottomNavButton {
 					height: fit-content;
