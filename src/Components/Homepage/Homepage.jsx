@@ -276,6 +276,7 @@ function Homepage() {
 					</>
 				)}
 			</div>
+			<BottomNav />
 		</div>
 	);
 }

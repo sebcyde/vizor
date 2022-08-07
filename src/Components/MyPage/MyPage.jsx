@@ -1,6 +1,7 @@
 import Fab from '../Fab/Fab';
 import Nav from '../Navbar/TopNav/Nav';
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
 	ref,
 	uploadBytes,
@@ -22,12 +23,19 @@ function MyPage() {
 	const [imageUpload, setImageUpload] = useState(null);
 	const [imageUrls, setImageUrls] = useState([]);
 	const imagesListRef = ref(storage, `${auth.currentUser.uid}`);
+	const navigate = useNavigate();
 	const FinalImageList = [];
 	const AllMetaData = [];
 	const RawUserData = [];
 
 	useEffect(() => {
-		Run();
+		auth.onAuthStateChanged((user) => {
+			if (user === null) {
+				navigate('/');
+			} else {
+				Run();
+			}
+		});
 	}, []);
 
 	// To be moved to the UploadPage component
@@ -48,11 +56,15 @@ function MyPage() {
 	};
 
 	const Run = async () => {
-		await querySnapshot(auth.currentUser.uid).then((Data) => {
-			console.log(Data[0]);
-			RawUserData.push(Data[0]);
-			return;
-		});
+		await querySnapshot(auth.currentUser.uid)
+			.then((Data) => {
+				setUserData(Data[0]);
+				RawUserData.push(Data[0]);
+				return;
+			})
+			.then(() => {
+				console.log(RawUserData[0]);
+			});
 
 		await listAll(imagesListRef)
 			.then((response) => {
@@ -79,12 +91,9 @@ function MyPage() {
 				});
 			})
 			.then(() => {
-				console.log(RawUserData[0]);
-				setUserData(RawUserData[0]);
 				return;
 			})
 			.then(() => {
-				console.log(UserData);
 				setLoading(false);
 			});
 	};
@@ -100,39 +109,41 @@ function MyPage() {
 						<span className="PFPandFollowersContainer">
 							<img
 								src={
-									UserData.ProfilePictureURL.stringValue === ''
+									RawUserData[0].ProfilePictureURL.stringValue === ''
 										? require('../../Assets/DefaultMale.jpg')
-										: UserData.ProfilePictureURL.stringValue
+										: RawUserData[0].ProfilePictureURL.stringValue
 								}
 								className="ProfilePhoto"
 							/>
 							<span className="FollowersFollowingContainer">
 								<div className="PostsContainer">
 									<h3 className="Followers">
-										{UserData.FollowedByUsers.arrayValue.values
-											? UserData.FollowedByUsers.arrayValue.values
+										{auth.currentUser.FollowedByUsers.arrayValue.values
+											? auth.currentUser.FollowedByUsers.arrayValue.values
 											: '0'}
 									</h3>
 									<p>Posts</p>
 								</div>
 								<div className="FollowersContainer">
 									<h3 className="Followers">
-										{UserData.FollowedByUsers.arrayValue.values
-											? UserData.FollowedByUsers.arrayValue.values
+										{auth.currentUser.FollowedByUsers.arrayValue.values
+											? auth.currentUser.FollowedByUsers.arrayValue.values
 											: '0'}
 									</h3>
 									<p>Followers</p>
 								</div>
 								<div className="FollowingContainer">
 									<h3 className="Following">
-										{UserData.FollowedUsers.arrayValue.values.length}
+										{auth.currentUser.FollowedUsers.arrayValue.values.length}
 									</h3>
 									<p>Following</p>
 								</div>
 							</span>
 						</span>
-						<h3 className="UserName">{UserData.DisplayName.stringValue}</h3>
-						<p className="Bio">{UserData.Bio.stringValue}</p>
+						<h3 className="UserName">
+							{auth.currentUser.DisplayName.stringValue}
+						</h3>
+						<p className="Bio">{auth.currentUser.Bio.stringValue}</p>
 					</div>
 
 					<Button

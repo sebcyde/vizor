@@ -1,6 +1,15 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+	Link,
+	useNavigate,
+} from 'react-router-dom';
+import { getAuth } from 'firebase/auth';
+import { firebaseConfig } from './Components/Firebase/Firebase';
+import { initializeApp } from 'firebase/app';
 import M from 'materialize-css';
 import Nav from './Components/Navbar/TopNav/Nav';
 import Profile from './Components/Profile/Profile';
@@ -20,6 +29,8 @@ import EditProfile from './Components/MyPage/EditProfile/EditProfile';
 function App() {
 	const [Loading, setLoading] = useState(true);
 	const [Theme, setTheme] = useState('Light App');
+	const app = initializeApp(firebaseConfig);
+	const auth = getAuth(app);
 
 	setTimeout(() => {
 		setLoading(false);
@@ -51,7 +62,6 @@ function App() {
 							<Route path="/Messages" element={<Messages />} />
 							<Route path="/EditProfile" element={<EditProfile />} />
 						</Routes>
-						<BottomNav />
 					</>
 				)}
 			</div>

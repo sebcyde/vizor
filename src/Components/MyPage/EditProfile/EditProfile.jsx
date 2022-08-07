@@ -1,51 +1,120 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../../Navbar/TopNav/Nav';
 import { querySnapshot } from '../../Homepage/UserInfo/UserInfo';
+import { initializeApp } from 'firebase/app';
+import { useNavigate } from 'react-router-dom';
 import {
-	ref,
-	uploadBytes,
-	getDownloadURL,
-	listAll,
-	list,
-	getMetadata,
-} from 'firebase/storage';
+	getFirestore,
+	collection,
+	doc,
+	addDoc,
+	getDocs,
+	setDoc,
+	updateDoc,
+	FieldValue,
+	arrayUnion,
+} from 'firebase/firestore';
 import { storage } from '../../Firebase/FireStorage';
-import { auth } from '../../Firebase/Firebase';
+import { auth, firebaseConfig } from '../../Firebase/Firebase';
 import LoadingScreen from '../../LoadingScreen/LoadingScreen';
 import BarLoader from 'react-spinners/HashLoader';
 
 function EditProfile() {
+	const [SaveChangesText, setSaveChangesText] = useState('Save Changes');
 	const [Loading, setLoading] = useState(true);
 	const [UserData, setUserData] = useState();
-	const [SaveChangesText, setSaveChangesText] = useState('Save Changes');
+
+	const [ProfilePicture, setProfilePicture] = useState();
+	const [Name, setName] = useState('Name');
+	const [Username, setUsername] = useState('Username');
+	const [Website, setWebsite] = useState('Website');
+	const [Bio, setBio] = useState('Bio');
+	const [Phone, setPhone] = useState('Phone');
+	const navigate = useNavigate();
+	const app = initializeApp(firebaseConfig);
+	const db = getFirestore(app);
 
 	useEffect(() => {
-		Run();
+		auth.onAuthStateChanged((user) => {
+			if (user === null) {
+				navigate('/');
+			} else {
+				Run();
+			}
+		});
 	}, []);
 
-	const Upload = async () => {
-		console.log('Upload Start');
-		setTimeout(() => {
-			console.log('Upload End');
-		}, 3000);
+	const NameChange = (event) => {
+		setUsername(event.target.value);
+	};
+
+	const UsernameChange = (event) => {
+		setUsername(event.target.value);
+	};
+
+	const WebsiteChange = (event) => {
+		setWebsite(event.target.value);
+	};
+
+	const BioChange = (event) => {
+		setBio(event.target.value);
+	};
+
+	const PhoneChange = (event) => {
+		setPhone(event.target.value);
+	};
+
+	const RemovePhoto = async () => {
+		console.log('Removing Photo');
 	};
 
 	const UpdateDetails = async () => {
 		setSaveChangesText(<BarLoader color={'#7d82b8'} size={30} />);
-		console.log('UD Function Start');
+		await getDocs(collection(db, 'users'))
+			.then((result) => {
+				let AllUsers = result.docs;
 
-		await Upload().then(() => {
-			setSaveChangesText('Changes Saved');
-		});
+				AllUsers.forEach((DBuser) => {
+					if (
+						DBuser._document.data.value.mapValue.fields.uid.stringValue ===
+						auth.currentUser.uid
+					) {
+						let UserInfo = DBuser._document.data.value.mapValue.fields;
+
+						console.log(UserInfo);
+
+						const UserRef = doc(db, 'users', UserInfo.uid.stringValue);
+
+						setDoc(
+							UserRef,
+							{ name: Name },
+							{ DisplayName: Username },
+							{ Website: Website },
+							{ Bio: Bio },
+							{ Phone: Phone }
+						);
+					}
+				});
+			})
+			.then(() => {
+				console.log(auth.currentUser);
+				setSaveChangesText('Changes Saved');
+			});
 	};
 
 	const Run = async () => {
 		await querySnapshot(auth.currentUser.uid)
 			.then((Data) => {
-				setUserData(Data[0]);
+				setProfilePicture(Data[0].ProfilePictureURL.stringValue);
+				setName(Data[0].name.stringValue);
+				setUsername(Data[0].DisplayName.stringValue);
+				// setWebsite(Data[0].Website.stringValue);
+				setBio(Data[0].Bio.stringValue);
+				// setPhone(Data[0].Phone.stringValue);
 				return;
 			})
 			.then(() => {
+				console.log(UserData);
 				setLoading(false);
 			});
 	};
@@ -63,33 +132,49 @@ function EditProfile() {
 					<span className="PhotoSpan">
 						<img
 							src={
-								UserData.ProfilePictureURL.stringValue === ''
+								ProfilePicture === ''
 									? require('../../../Assets/DefaultMale.jpg')
-									: UserData.ProfilePictureURL.stringValue
+									: ProfilePicture
 							}
 						/>
 						<span>
-							<a>Change Profile Photo</a>
-							<a>Remove Profile Photo</a>
+							<a
+							// onClick={() => {
+							// 	RemovePhoto();
+							// }}
+							>
+								Change Profile Photo
+							</a>
+							<a
+								onClick={() => {
+									RemovePhoto();
+								}}
+							>
+								Remove Profile Photo
+							</a>
 						</span>
 					</span>
 					<span className="NameSpan">
-						<input type="text" placeholder="Name" />
+						<input type="text" placeholder={Name} onChange={NameChange} />
 					</span>
 					<span className="UserNameSpan">
-						<input type="text" placeholder="Username" />
+						<input
+							type="text"
+							placeholder={Username}
+							onChange={UsernameChange}
+						/>
 					</span>
 					{/* <span className="PronounsSpan">
 						<input type="text" placeholder="Pronouns" />
 					</span> */}
 					<span className="WebsiteSpan">
-						<input type="text" placeholder="Website" />
+						<input type="text" placeholder={Website} onChange={WebsiteChange} />
 					</span>
 					<span className="BioSpan">
-						<input type="text" placeholder="Bio" />
+						<input type="text" placeholder={Bio} onChange={BioChange} />
 					</span>
 					<span className="PhoneSpan">
-						<input type="tel" placeholder="07123456789" />
+						<input type="tel" placeholder={Phone} onChange={PhoneChange} />
 					</span>
 
 					<span className=""></span>

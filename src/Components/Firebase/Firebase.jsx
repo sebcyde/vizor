@@ -54,6 +54,8 @@ const registerWithEmailAndPassword = async (
 			Verified: false,
 			Gender: '',
 			Posts: [],
+			Phone: '',
+			Website: '',
 		});
 		user.displayName = UserName;
 		console.log('Registered Successfully');
